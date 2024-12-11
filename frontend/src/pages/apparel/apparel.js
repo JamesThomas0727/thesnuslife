@@ -1,13 +1,32 @@
-import React from 'react'
-import FilterBar from '../../components/filterbar/FilterBar';
-import DropdownButton from '../../components/dropdown/Dropdown';
-import "./apparel.css";
-export default function ApparelPage() {
-    return (
-        <div className='container'>
-            <div class="anton1 fs-2 text-center text-uppercase">Shop All</div>
-            <div className='left-bar'><FilterBar></FilterBar></div>
-            <div><DropdownButton  title="Newest"></DropdownButton></div>
+
+import '../accessories/accessories.css'
+import ProductCard from '../../components/productcard/ProductCard'
+
+export default function AccessoriesPage(){
+
+
+    const product = {
+        "product_name": "Ace X Xmas Edition - 16mg",
+        "img": "https://thesnuslife-asset.s3.amazonaws.com/1731682337434_IMG_6121.PNG",
+        "price1": 4.99,
+        "price2": 5.99,
+        "moneytype": 4,
+    };
+    return(
+
+        <div className='accessoriesBox'>
+            <div className='pageTitle'>
+                Accessories
+            </div>
+            
+            <div className='cardbox' item xs={9}>
+                        
+                <ProductCard product={product}></ProductCard>
+            </div>
+            
         </div>
-    );
+        
+      
+    )
+
 }

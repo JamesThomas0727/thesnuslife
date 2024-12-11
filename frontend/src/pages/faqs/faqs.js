@@ -12,11 +12,11 @@ export default function FAQsPage() {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
     return (
-        <div>
+        <div className='faqsBody'>
             <div className='faqs-subject'>
                 <strong>Frequently Asked Questions</strong>
             </div>
-            <Accordion defaultActiveKey="0" flush>
+            <div defaultActiveKey="0" flush className='sentencebox'>
                 {faqs.map(faq => {
                     return (
                         <Accordion.Item eventKey={faq.question_id}>
@@ -29,7 +29,7 @@ export default function FAQsPage() {
                         </Accordion.Item>
                     )
                 })}
-            </Accordion>
+            </div>
         </div>
     );
 }

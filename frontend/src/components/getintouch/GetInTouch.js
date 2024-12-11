@@ -10,7 +10,7 @@ import Img6 from '../../assets/images/image (6).svg'
 export default function Getin(){
     return(
         <div className="bluebox">
-            <div className=" mark">Get in touch</div>
+            <div className=" thickbold">Get in touch</div>
             <div className="intro">Dylan - Sales Manager @ info @t hesnuslife . com</div>
             <div className="icon"> 
             <img id='icons' src={Camera} alt='kik'></img>

@@ -1,2 +1,3 @@
-# thesnuslife project
-thesnuslife.come (shop site)
+# thesnuslife
+thesnuslife.com (shop site)
+

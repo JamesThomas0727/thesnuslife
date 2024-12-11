@@ -34,7 +34,7 @@ export default function Send() {
                             <textarea className='messagebox' placeholder='Type Your Message Here...' name='message' rows="5"></textarea>
                         </div>
                         <div className=' largebtn qwe'>
-                            <div className='btn sendbtn'>Send</div> 
+                            <div className='button sendbtn'>Send</div> 
                         </div>
                     </div>
                 </div>

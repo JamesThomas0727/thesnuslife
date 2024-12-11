@@ -1,5 +1,5 @@
-.btn{
-    background-color: white;
+.button{
+    background-color: rgba(209, 209, 209, 0.575);
     color: black;
     font-size: 16px;
     width: 138.48px;
@@ -14,12 +14,7 @@
    border-radius: 5px;
     
 }
-.inemail{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0px;
-}
+
 .textbtn{
     padding: 0px 12px;
     width: 243px;

@@ -1,0 +1,95 @@
+
+.get{
+    background-color: rgb(0, 132, 255,0.8);
+    margin: 0px;
+    /* width: 40%; */
+    padding:48px 12px 0px 12px ;
+    flex-wrap: wrap;
+}
+.send{
+   
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 590px) {
+    .col{
+        width: 100%;
+        margin: 12px;
+        display: block;
+        justify-content: center;
+        width: 100%;
+    }
+    input{
+        width: 150px;
+       }
+ #flow1{
+    display: none;
+ }
+ .headtext1{
+    display: none;
+    
+}
+#flow2{
+    display: none;
+}
+      
+  }
+ 
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 760) {
+    .col{
+        width: 100%;
+        margin: 12px;
+        display: block;
+        justify-content: center;
+        width: 100%;
+    }
+    .Sendemail{
+        display: block;
+        margin-top: 40px;
+    }
+
+      
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 800px) {
+    .sendcon{
+        margin: 10%;
+        padding: 0px 12px;
+        width: 100%;
+        display: block;
+        flex-wrap: wrap;
+       
+    }
+    .Sendemail{
+        display: flex;
+        margin-top: 40px;
+    }
+    
+    .col{
+        width: 100%;
+        margin: 12px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+  }
+  
+  
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 1120px) {
+ 
+  }
+
+
+  
+
+
+  

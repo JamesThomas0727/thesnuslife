@@ -1,0 +1,14 @@
+{
+  "name": "thesnuslife",
+  "version": "1.0.0",
+  "description": "thesnuslife project",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "dev": "concurrently \"cd .\\backend\\ node server.js\" \"cd .\\frontend\\ npm start\"",
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

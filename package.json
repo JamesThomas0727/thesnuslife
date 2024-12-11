@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "scripts": {
-    "dev": "concurrently \"cd .\\backend\\ node server.js\" \"cd .\\frontend\\ npm start\"",
+    "dev": "",
     "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

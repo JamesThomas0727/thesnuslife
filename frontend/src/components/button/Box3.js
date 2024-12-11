@@ -13,8 +13,9 @@ export default function Box3(){
         <div className='smallt'>
         <Textbox text = "subscribe to our mail list for monthly discounts and offers" />
         </div>
-        <Button text ="SUBSCRIBE" />
-
+        <div id = "subscribe">
+            <Button text ="SUBSCRIBE" />
+        </div>
     </div>
     )
 }

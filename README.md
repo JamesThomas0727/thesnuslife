@@ -1,2 +1,2 @@
-# final-project
-thesnuslife project
+# thesnuslife project
+thesnuslife.come (shop site)

@@ -1,16 +1,22 @@
-import "./Header.css";
-import MarkImg from "../../assets/images/products/14.png";
-import { useNavigate } from "react-router-dom";
+import './Header.css';
+import MarkImg from '../../assets/images/products/14.png';
+import { useNavigate } from 'react-router-dom';
+import Cartbar from '../cartwindow/Cart';
 
 function openNav() {
-    console.log(document.getElementById("myNav").style);
-    document.getElementById("myNav").style.width = "30%";
+    // console.log(document.getElementById('myNav').style);
+    document.getElementById('myNav').style.width = '30%';
+   
 }
 
 function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
+    document.getElementById('myNav').style.width = '0%';
 }
-
+function openWin() {
+    // console.log(document.getElementById('smallleft').classname);
+    document.getElementById('smallleft').classList.toggle('unshown');
+    document.getElementById('sidecart').style.width = '400px';
+};
 function Head1() {
     return (
         <div id="flow1" className="text-center headtext">
@@ -34,52 +40,44 @@ function Head3() {
 }
 function Contactbar(props) {
     const navigate = useNavigate();
-    let temp = "contact gap-4 px-2"
+    let temp = 'contact gap-4 px-2';
     if (props.val) {
         temp = props.val;
     }
 
     return (
         <div className={temp}>
-            <div
-                className=" nav-fs font-semibold"
-                onClick={() => navigate("/home")}
-            >
+            <div className=" nav-fs font-semibold" onClick={() => navigate('/home')}>
                 Home
             </div>
-            <div
-                className="nav-fs font-semibold"
-                onClick={() => navigate("/shop")}
-            >
+            <div className="nav-fs font-semibold" onClick={() => navigate('/shop')}>
                 Shop
             </div>
             <div
                 className="nav-fs font-semibold"
-                onClick={() => navigate("/apparel")}
+                onClick={() => navigate('/apparel')}
             >
                 Apparel
             </div>
             <div
                 className="nav-fs font-semibold"
-                onClick={() => navigate("/accessories")}
+                onClick={() => navigate('/accessories')}
             >
                 Accessories
             </div>
             <div
                 className="nav-fs font-semibold"
-                onClick={() => navigate("/wholesale")}
+                onClick={() => navigate('/wholesale')}
             >
                 Wholesale
             </div>
             <div
                 className="nav-fs font-semibold"
-                onClick={() => navigate("/aboutus")}
+                onClick={() => navigate('/aboutus')}
             >
                 About Us
             </div>
-            <div className="nav-fs font-semibold"
-                onClick={() => navigate("/faqs")}>
-                
+            <div className="nav-fs font-semibold" onClick={() => navigate('/faqs')}>
 
                 FAQs
             </div>
@@ -115,8 +113,139 @@ function Selection(props) {
     );
 }
 
-export default function Header() {
+export function Navbar() {
     const navigate = useNavigate();
+    return (
+        <>
+            <div className=" bg-prime">
+                <div className="con px-12 h-24">
+                    <div className="nav">
+                        <div
+                            className="imgbox no-underline"
+                            onClick={() => navigate('/home')}
+                        >
+                            <img
+                                src={MarkImg}
+                                alt="logo-theSunuslife"
+                                className="markImg "
+                            />
+                        </div>
+                        <Contactbar />
+
+                        <div className="toolbox">
+                            <Selection />
+
+                            <div
+                                class="flex justify-center items-center cursor-pointer px-1 lens"
+                                onClick={() => alert('Sorry, we are not out of service!')}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        cx="10"
+                                        cy="10"
+                                        r="8"
+                                        stroke="black"
+                                        stroke-width="2"
+                                        fill="none"
+                                    />
+                                    <line
+                                        x1="15"
+                                        y1="15"
+                                        x2="20"
+                                        y2="20"
+                                        stroke="black"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div
+                                className="busket"
+                                onClick={openWin}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <rect
+                                        x="3"
+                                        y="5"
+                                        width="16"
+                                        height="10"
+                                        rx="2"
+                                        ry="2"
+                                        fill="rgba(0, 110, 255, 0)"
+                                        stroke="black"
+                                        stroke-width="1"
+                                    />
+                                    <line
+                                        x1="3"
+                                        y1="5"
+                                        x2="1"
+                                        y2="3"
+                                        stroke="black"
+                                        stroke-width="1"
+                                    />
+                                    <circle cx="6" cy="18" r="2" fill="black" />
+                                    <circle cx="16" cy="18" r="2" fill="black" />
+                                </svg>
+                            </div>
+                            <div
+                                className="account"
+                                onClick={() => alert('sorry, we are not out of service!')}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 100 100"
+                                >
+                                    <circle cx="50" cy="30" r="15" fill="black" />
+                                    <ellipse cx="50" cy="70" rx="25" ry="15" fill="#black" />
+                                    <rect x="0" y="0" width="100" height="100" fill="none" />
+                                </svg>
+                            </div>
+
+                            <div>
+                                <span class="menu" onClick={openNav}>
+                                    &#9776;
+                                </span>
+                            </div>
+
+                            <div id="myNav">
+                                <div className="sidecon">
+                                    <div class="closebtn menu" onClick={closeNav}>
+                                        {' '}
+                                        &times;
+                                    </div>
+                                    <div className="aaa">
+                                        <Selection val="navs" />
+                                    </div>
+                                    <div className="bartitle">Menu</div>
+                                    <div class="overlay">
+                                        <div class="overlay-content">
+                                            <Contactbar val=" blocks" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default function Header() {
+
     return (
         <header>
             <div>
@@ -128,130 +257,13 @@ export default function Header() {
                     <Head3 />
                 </div>
             </div>
-
+            <Navbar />
             <div>
-                <div className=" bg-prime">
-                    <div className="con px-12 h-24">
-                        <div className="nav">
-                            <div
-                                className="imgbox no-underline"
-                                onClick={() => navigate("/home")}
-                            >
-                                <img
-                                    src={MarkImg}
-                                    alt="logo-theSunuslife"
-                                    className="markImg "
-                                ></img>
-                            </div>
-                            <Contactbar />
-
-                            <div className="toolbox">
-                                <Selection />
-
-                                <div
-                                    class="flex justify-center items-center cursor-pointer px-1 lens"
-                                    onClick={() => alert("Sorry, we are not out of service!")}
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <circle
-                                            cx="10"
-                                            cy="10"
-                                            r="8"
-                                            stroke="black"
-                                            stroke-width="2"
-                                            fill="none"
-                                        />
-                                        <line
-                                            x1="15"
-                                            y1="15"
-                                            x2="20"
-                                            y2="20"
-                                            stroke="black"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <div
-                                    className="busket"
-                                    onClick={() => alert("sorry, we are not out of service!")}
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <rect
-                                            x="3"
-                                            y="5"
-                                            width="16"
-                                            height="10"
-                                            rx="2"
-                                            ry="2"
-                                            fill="rgba(0, 110, 255, 0)"
-                                            stroke="black"
-                                            stroke-width="1"
-                                        />
-                                        <line
-                                            x1="3"
-                                            y1="5"
-                                            x2="1"
-                                            y2="3"
-                                            stroke="black"
-                                            stroke-width="1"
-                                        />
-                                        <circle cx="6" cy="18" r="2" fill="black" />
-                                        <circle cx="16" cy="18" r="2" fill="black" />
-                                    </svg>
-                                </div>
-                                <div
-                                    className="account"
-                                    onClick={() => alert("sorry, we are not out of service!")}
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="32"
-                                        height="32"
-                                        viewBox="0 0 100 100"
-                                    >
-                                        <circle cx="50" cy="30" r="15" fill="black" />
-                                        <ellipse cx="50" cy="70" rx="25" ry="15" fill="#black" />
-                                        <rect x="0" y="0" width="100" height="100" fill="none" />
-                                    </svg>
-                                </div>
-
-                                <div>
-                                    <span class="menu" onClick={openNav}>
-                                        &#9776;
-                                    </span>
-                                </div>
-
-                                <div id="myNav">
-                                    <div className="sidecon">
-                                        <div class="closebtn menu" onClick={closeNav}> &times;</div>
-                                        <div className="aaa"><Selection val="navs" /></div>
-                                        <div className="bartitle">Menu</div>
-                                        <div class="overlay">
-                                            <div class="overlay-content">
-                                                <Contactbar val=" blocks" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <Cartbar />
                 </div>
+                
             </div>
         </header>
-    );
+    )
 }

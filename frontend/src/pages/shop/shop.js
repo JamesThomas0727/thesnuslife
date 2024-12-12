@@ -65,27 +65,28 @@ function ShopPage() {
 
                     {isLoading ? (
                         <LoadingPanel title="Products Loading..." />
-                    ) : (
-                        <div className='listbox'>
-                            <div className='newestdown'>
-                                <DropdownButton />
+                    ) : (<>
+                        {products.length ? (
+                            <div className='listbox'>
+                                <div className='newestdown'>
+                                    <DropdownButton />
+                                </div>
+                                <div className='cardbox' item xs={9}>
+                                    {products.map((product, index) => {
+                                        return (
+                                            <ProductCard key={product._id}
+                                                product={product}
+                                                currency={currencyRates}></ProductCard>
+                                        );
+                                    })}
+                                </div>
+                                <div className='pagination'>
+                                    <Pagination count={products.length}
+                                        page_index={1} />
+                                </div>
                             </div>
-                            <div className='cardbox' item xs={9}>
-                                {products.map((product, index) => {
-                                    return (
-                                        <ProductCard key={product._id}
-                                            product={product}
-                                            currency={currencyRates}></ProductCard>
-                                    );
-                                })}
-                            </div>
-                            <div className='pagination'>
-                                <Pagination count={products.length}
-                                    page_index={1} />
-                            </div>
-                        </div>
-                    )}
-
+                        ) : (<NoPage title="No Products" />)}
+                    </>)}
                 </div>
             </div >
         </>

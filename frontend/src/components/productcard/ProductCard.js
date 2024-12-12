@@ -4,7 +4,7 @@ import "./ProductCard.css"
 const currency_chars = ["A$ ", "CA$ ", "€ ", "£ ", "$ ",];
 export default function ProductCard(props) {
     const product = props.product;
-    const current = props.currency;
+    const currency = props.currencyRates;
     const currency_id = product.currency_type;
     let currency_char = currency_chars[currency_id];
 

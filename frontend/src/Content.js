@@ -8,56 +8,45 @@ import AccessoriesPage from './pages/accessories/accessories';
 import WholesalePage from './pages/wholesale/wholesale';
 import AboutUsPage from './pages/aboutus/aboutus';
 import FAQsPage from './pages/faqs/faqs';
-
-import LoadingPanel from './components/loadingpanel/LoadingPanel';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-// import { SideNavOuterToolbar as SideNavBarLayout } from './layouts';
 export default function Content() {
   return (
-    // <SideNavBarLayout title={appInfo.title}>
     <div>
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* {routes.map(({ path, element }) => (
-          <Route
-            key={path}
-            path={path}
-            element={element}
-          />
-        ))} */}
           <Route
             path='/home'
-            element={<HomePage></HomePage>}
+            element={<HomePage />}
           />
           <Route
             path='*'
-            element={<HomePage></HomePage>}
+            element={<HomePage />}
           />
           <Route
             path='/shop'
-            element={<ShopPage></ShopPage>}
+            element={<ShopPage />}
           />
           <Route
             path='/faqs'
-            element={<FAQsPage></FAQsPage>}
+            element={<FAQsPage />}
           />
           <Route
             path='/apparel'
-            element={<ApparelPage></ApparelPage>}
+            element={<ApparelPage />}
           />
           <Route
             path='/accessories'
-            element={<AccessoriesPage></AccessoriesPage>}
+            element={<AccessoriesPage />}
           />
           <Route
             path='/wholesale'
-            element={<WholesalePage></WholesalePage>}
+            element={<WholesalePage />}
           />
           <Route
             path='/faqs'
-            element={<FAQsPage></FAQsPage>}
+            element={<FAQsPage />}
           />
           <Route
             path='/aboutus'

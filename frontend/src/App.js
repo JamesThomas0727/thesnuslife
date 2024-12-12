@@ -18,6 +18,6 @@ export function Root() {
         </NavigationProvider>
       </AuthProvider>
     </Router>
-  );
+  )
 }
 export default App;

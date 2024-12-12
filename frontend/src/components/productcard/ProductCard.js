@@ -6,9 +6,9 @@ import { addProduct, removeProduct, updateQuantity } from '../../cartSlice';
 const currency_chars = ["A$ ", "CA$ ", "€ ", "£ ", "$ ",];
 export default function ProductCard(props) {
     const product = props.product;
-    const currency = useSelector((state) => state.currency); // Access cart state
-    // const currency_rate = currency['currency_rate'];
-    console.log(currency);
+    let currency = useSelector((state) => state.currency.currency); // Access cart state
+    let currency_rate = currency.currency_rate;
+    console.log(currency_rate, currency);
     const currency_id = currency.currency_id;
     const currency_char = currency_chars[currency_id];
     const dispatch = useDispatch();

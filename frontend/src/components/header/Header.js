@@ -1,6 +1,7 @@
 import './Header.css';
 import MarkImg from '../../assets/images/products/14.png';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { useSelector, useDispatch } from 'react-redux';
 import { changeCurrency } from '../../currencySlice';
 import { useState, useEffect } from 'react';
@@ -8,12 +9,24 @@ import axios from 'axios';
 function openNav() {
     console.log(document.getElementById('myNav').style);
     document.getElementById('myNav').style.width = '30%';
+=======
+import Cartbar from '../cartwindow/Cart';
+
+function openNav() {
+    // console.log(document.getElementById('myNav').style);
+    document.getElementById('myNav').style.width = '30%';
+   
+>>>>>>> origin/master
 }
 
 function closeNav() {
     document.getElementById('myNav').style.width = '0%';
 }
-
+function openWin() {
+    // console.log(document.getElementById('smallleft').classname);
+    document.getElementById('smallleft').classList.toggle('unshown');
+    document.getElementById('sidecart').style.width = '400px';
+};
 function Head1() {
     return (
         <div id="flow1" className="text-center headtext">
@@ -177,7 +190,11 @@ export function Navbar() {
                             </div>
                             <div
                                 className="busket"
+<<<<<<< HEAD
                                 onClick={() => alert('sorry, we are not out of service!')}
+=======
+                                onClick={openWin}
+>>>>>>> origin/master
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +287,14 @@ export default function Header() {
             </div>
             <Navbar />
             <div>
+<<<<<<< HEAD
+=======
+                <div>
+                    <Cartbar />
+                </div>
+                
+>>>>>>> origin/master
             </div>
         </header>
-    );
+    )
 }

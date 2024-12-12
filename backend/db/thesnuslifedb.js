@@ -11,7 +11,7 @@
  Target Server Version : 80004 (8.0.4)
  File Encoding         : 65001
 
- Date: 11/12/2024 12:38:13
+ Date: 11/12/2024 21:07:56
 */
 
 
@@ -459,7 +459,8 @@ db.getCollection("products").insert([ {
     brand: "Bundle Deals",
     product_avatar_id: 21,
     registered: "2024-12-11 11:26:34.318",
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 4
 } ]);
 db.getCollection("products").insert([ {
     _id: ObjectId("6758525f1f33d6272100d1a8"),
@@ -470,10 +471,11 @@ db.getCollection("products").insert([ {
     product_type: "NoNic@",
     pot: 7,
     flavor: "American",
-    brand: "Bundle Deals",
+    brand: "Accessories",
     product_avatar_id: 22,
     registered: "2024-12-11 11:26:34.318",
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 3
 } ]);
 db.getCollection("products").insert([ {
     _id: ObjectId("6759239bd5231e7da70c7b81"),
@@ -484,10 +486,11 @@ db.getCollection("products").insert([ {
     product_type: "NoNic@",
     pot: 7,
     flavor: "American",
-    brand: "Bundle Deals",
+    brand: "Accessories",
     product_avatar_id: 23,
     registered: ISODate("2024-12-11T11:26:18.681Z"),
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 2
 } ]);
 db.getCollection("products").insert([ {
     _id: ObjectId("675923a6d5231e7da70c7b82"),
@@ -498,14 +501,15 @@ db.getCollection("products").insert([ {
     product_type: "NoNic@",
     pot: 7,
     flavor: "American",
-    brand: "Bundle Deals",
+    brand: "Accessories",
     product_avatar_id: 24,
     registered: ISODate("2024-12-11T11:26:11.965Z"),
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 1
 } ]);
 db.getCollection("products").insert([ {
     _id: ObjectId("675923bdd5231e7da70c7b83"),
-    brand: "Bundle Deals",
+    brand: "Accessories",
     flavor: "American",
     new_price: 30.99,
     old_price: 39.99,
@@ -515,7 +519,8 @@ db.getCollection("products").insert([ {
     product_name: "The Snus Life Apparel Hoodie - Black",
     product_type: "NoNic@",
     registered: ISODate("2024-12-11T11:26:04.934Z"),
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 0
 } ]);
 db.getCollection("products").insert([ {
     _id: ObjectId("675923bdd5231e7da70c7b84"),
@@ -528,7 +533,8 @@ db.getCollection("products").insert([ {
     product_type: "NoNic@",
     product_avatar_id: 26,
     registered: ISODate("2024-12-11T11:25:57.951Z"),
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 4
 } ]);
 db.getCollection("products").insert([ {
     _id: ObjectId("675923bdd5231e7da70c7b85"),
@@ -542,7 +548,8 @@ db.getCollection("products").insert([ {
     old_price: 20.01,
     product_avatar_id: 27,
     registered: ISODate("2024-12-11T11:25:50.385Z"),
-    product_description: "(Array) 6 Elements"
+    product_description: "(Array) 6 Elements",
+    currency_type: 3
 } ]);
 
 // ----------------------------

@@ -51,7 +51,7 @@ app.get('/products', async (req, res) => {
         }
     }
 });
-app.get('/currency_rates', async (req, res) => {
+app.get('/currencies', async (req, res) => {
     try {
         const currency_rates = await CurrencyRateModel.find();
         res.json(currency_rates);

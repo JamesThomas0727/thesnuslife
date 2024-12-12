@@ -1,7 +1,12 @@
 import './Header.css'
 import MarkImg from '../../assets/images/products/14.png'
 import { useNavigate } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux';
+import changeCurrency from '../../slice';
+import { useState, useEffect } from 'react';
+import { Provider } from 'react-redux';
+import store from '../../store';
+import axios from 'axios';
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
 }
@@ -26,10 +31,25 @@ function Head3() {
     )
 }
 
-
+const getCurrency = (currencies, currency_name) => {
+    currencies.forEach((currency, index, currencies) => {
+        if (currency.currency_name == currency_name) return currency;
+    });
+}
 
 export default function Header() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    let initCurrency = { "currency_id": 4, "currency_name": "USD", "currency_rate": 1 };
+    const [currencies, setCurrency] = useState(initCurrency);
+    useEffect(() => {
+        axios.get("http://localhost:5000/currencies")
+            .then((response) => {
+                setCurrency(response.data);
+            })
+            .catch((error) => console.error(error));
+    })
     return (
         <header>
             <div >
@@ -81,17 +101,20 @@ export default function Header() {
                                 </button>
                             </div>
                             <div className='toolbox'>
-                                <select className='px-1 dropdowns'>
+                                <select className='px-1 dropdowns'
+                                    onChange={(event) => {
+                                        dispatch(changeCurrency(event.target.value))
+                                    }}>
                                     <option className='bg-white ' disabled>Currency</option>
-                                    <option className='bg-white' value='AUD'>AUD</option>
-                                    <option className='bg-white' value='CAD'>CAD</option>
-                                    <option className='bg-white' value='EUR'>EUR</option>
-                                    <option className='bg-white' value='GBP'>GBP</option>
-                                    <option className='bg-white' value='USD'>USD</option>
+                                    <option className='bg-white' value={0}>AUD</option>
+                                    <option className='bg-white' value={1}>CAD</option>
+                                    <option className='bg-white' value={2}>EUR</option>
+                                    <option className='bg-white' value={3}>GBP</option>
+                                    <option className='bg-white' value={4}>USD</option>
                                 </select>
 
                                 <div class="flex justify-center items-center cursor-pointer px-1 lens"
-                                    onClick={() => alert("Sorry, we are not out of service!")}>
+                                    onChange={() => alert("Sorry, we are not out of service!")}>
 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <circle cx="10" cy="10" r="8" stroke="black" stroke-width="2" fill="none" />
@@ -125,7 +148,6 @@ export default function Header() {
                 </div>
             </div>
 
-        </header>
-
-    )
+        </header >
+    );
 }

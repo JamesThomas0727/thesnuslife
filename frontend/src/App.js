@@ -2,11 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import Content from './Content';
 import { HashRouter as Router } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 import { NavigationProvider } from './context/navigation';
 import { AuthProvider, useAuth } from './context/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { store } from './slice';
+import store from './store';
 function App() {
   return (<Content />)
 }
@@ -15,9 +15,6 @@ export function Root() {
     <Router>
       <AuthProvider>
         <NavigationProvider>
-          <div>
-            <App />
-          </div>
         </NavigationProvider>
       </AuthProvider>
     </Router>

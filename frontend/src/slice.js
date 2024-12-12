@@ -1,18 +1,20 @@
-import { createSlice, configureStore, createReducer } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-const cartSlice = createSlice({
-    name: "cartReducer",
-    initialState: {},
-    reducers: {
-        addCart: (state) => { }
+const currencySlice = createSlice({
+    name: "currency",
+    initialState: {
+        currency: {
+            "currency_id": 4,
+            "currency_type": "USD",
+            "currency_rate": 1
+        }
     },
-});
-
-// const 
-
-export const store = configureStore({
-    reducer: {
-        cartReducer: cartSlice.reducer,
-
+    reducers: {
+        changeCurrency: (state, action) => {
+            state.currency = action.payload;
+        }
     }
 })
+export const { changeCurrency } = currencySlice.actions;
+
+export default currencySlice.reducer;

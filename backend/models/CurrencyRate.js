@@ -5,5 +5,5 @@ const CurrencyRateSchema = new mongoose.Schema({
     currency_rate: Number,
     registered: { type: Date, default: Date.now },
 });
-const CurrencyRate = mongoose.model("currency_rates", CurrencyRateSchema);
+const CurrencyRate = mongoose.model("currencies", CurrencyRateSchema);
 module.exports = CurrencyRate;

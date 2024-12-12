@@ -1,13 +1,13 @@
 .pcard {
-    max-width: 220px;
-    width: 220px;
+    max-width: 180px;
+    width: 150px;
     height: auto;
     margin: 15px;
     text-align: center;
     font-family: arial;
     background-color: transparent;
     border: none;
-  
+
 }
 
 .avatar {
@@ -51,14 +51,17 @@
 .pcard:hover .card-button {
     visibility: visible;
 }
-.pcard p{
+
+.pcard p {
     text-align: center;
 }
-.price{
+
+.price {
     display: flex;
     justify-content: center;
 }
-.price-strike{
+
+.price-strike {
     display: flex;
     justify-content: center;
 }

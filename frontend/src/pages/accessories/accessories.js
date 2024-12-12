@@ -1,32 +1,33 @@
 
 import './accessories.css'
-import ProductCard from '../../components/productcard/ProductCard'
-
-export default function AccessoriesPage(){
-
-
-    const product = {
-        "product_name": "Ace X Xmas Edition - 16mg",
-        "img": "https://thesnuslife-asset.s3.amazonaws.com/1731682337434_IMG_6121.PNG",
-        "price1": 4.99,
-        "price2": 5.99,
-        "moneytype": 4,
-    };
-    return(
+import React, { useState, useEffect } from 'react'
+import ProductCard from '../../components/productcard/ProductCard';
+import axios from 'axios';
+export default function AccessoriesPage() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5000/products?brand=Accessories')
+            .then(response => setProducts(response.data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+    return (
 
         <div className='accessoriesBox'>
             <div className='pageTitle'>
                 Accessories
             </div>
-            
+
             <div className='cardbox' item xs={9}>
-                        
-                <ProductCard product={product}></ProductCard>
+
+                {products.map((product, index) => {
+                    return (<ProductCard key={product.product_id}
+                        product={product}></ProductCard>);
+                })}
             </div>
-            
+
         </div>
-        
-      
+
+
     )
 
 }

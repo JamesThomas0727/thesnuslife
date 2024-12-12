@@ -31,13 +31,24 @@ app.get('/faqs', async (req, res) => {
     }
 });
 app.get('/products', async (req, res) => {
-    let category = req.query;
-    console.log(category);
-    try {
-        const products = await ProductModel.find();
-        res.json(products);
-    } catch (err) {
-        res.status(500).send(err.message);
+    let brand = req.query.brand;
+    console.log(brand);
+    if (brand !== undefined) {
+        try {
+            let products = await ProductModel.find()
+                .where('brand', brand);
+            res.json(products);
+        } catch (err) {
+            res.status(500).send(err.message);
+        }
+    }
+    else {
+        try {
+            let products = await ProductModel.find()
+            res.json(products);
+        } catch (err) {
+            res.status(500).send(err.message);
+        }
     }
 });
 app.get('/currency_rates', async (req, res) => {

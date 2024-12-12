@@ -28,6 +28,10 @@
     font-family: "consolas";
 }
 
+.visible {
+    display: none;
+}
+
 .price-strike {
     font-size: 15px;
     color: grey;

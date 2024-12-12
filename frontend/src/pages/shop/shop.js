@@ -9,8 +9,8 @@ import { useEffect, useState } from 'react';
 import NoPage from '../nopage/nopage';
 import LoadingPanel from "../../components/loadingpanel/LoadingPanel";
 
-var filters = [];
 function ShopPage() {
+
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -44,6 +44,49 @@ function ShopPage() {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    function productSort(event) {
+        let orderby = event.target.id;
+        switch (orderby) {
+            case 1:
+                products.sort((a, b) => {
+                    return a.regitered - b.regitered;
+                });
+                break;
+            case 2:
+                products.sort((a, b) => {
+                    return b.regitered - a.regitered;
+                });
+                break;
+            case 3:
+                products.sort((a, b) => {
+                    return a.new_price - b.new_price;
+                });
+                break;
+            case 4:
+                products.sort((a, b) => {
+                    return b.new_price - a.new_price;
+                });
+                break;
+            case 5:
+                products.sort((a, b) => {
+                    return a.product_name - b.product_name;
+                });
+                break;
+            case 6:
+                products.sort((a, b) => {
+                    return a.strength - b.strength;
+                });
+                break;
+            case 7:
+                products.sort((a, b) => {
+                    return b.strength - a.strength;
+                });
+                break;
+            default:
+                break;
+        }
+        console.log(products);
+    }
     return (
         <>
             <div className='shopwin'>
@@ -69,7 +112,8 @@ function ShopPage() {
                         {products.length ? (
                             <div className='listbox'>
                                 <div className='newestdown'>
-                                    <DropdownButton />
+                                    <DropdownButton
+                                        onChange={productSort} />
                                 </div>
                                 <div className='cardbox' item xs={9}>
                                     {products.map((product, index) => {

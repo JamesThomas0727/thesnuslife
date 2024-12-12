@@ -5,7 +5,6 @@ const ProductSchema = new mongoose.Schema({
     product_name: String,
     old_price: Number,
     new_price: Number,
-    money_type: Number,
     brand: String,
     flavor: String,
     pot: String,

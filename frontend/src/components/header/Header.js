@@ -61,7 +61,7 @@ export default function Header() {
                                 </button>
                                 <button className='nav-fs font-semibold'
                                     onClick={() => navigate('/apparel')}>
-                                    apparel
+                                    Apparel
                                 </button>
                                 <button className='nav-fs font-semibold'
                                     onClick={() => navigate('/accessories')}>

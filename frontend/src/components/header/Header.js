@@ -1,14 +1,10 @@
 import './Header.css'
 import MarkImg from '../../assets/images/products/14.png'
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import changeCurrency from '../../slice';
-import { useState, useEffect } from 'react';
-import { Provider } from 'react-redux';
-import store from '../../store';
-import axios from 'axios';
+
 function openNav() {
-    document.getElementById("myNav").style.width = "100%";
+    console.log(document.getElementById("myNav").style);
+    document.getElementById("myNav").style.width = "30%";
 }
 
 function closeNav() {
@@ -17,25 +13,27 @@ function closeNav() {
 
 function Head1() {
     return (
-        <div id='flow1' className="text-center headtext">Free UK Delivery on ALL Orders</div>
-    )
+        <div id="flow1" className="text-center headtext">
+            Free UK Delivery on ALL Orders
+        </div>
+    );
 }
 function Head2() {
     return (
-        <div id='flow2' className="text-center headtext">Order before 1pm for same day dispatch</div>
-    )
+        <div id="flow2" className="text-center headtext">
+            Order before 1pm for same day dispatch
+        </div>
+    );
 }
 function Head3() {
     return (
-        <div id='flow3' className="text-center  headtext">5 Pot Pick 'n' Mix for Just £19.95</div>
-    )
+        <div id="flow3" className="text-center  headtext">
+            5 Pot Pick 'n' Mix for Just £19.95
+        </div>
+    );
 }
 
-const getCurrency = (currencies, currency_name) => {
-    currencies.forEach((currency, index, currencies) => {
-        if (currency.currency_name == currency_name) return currency;
-    });
-}
+
 
 export default function Header() {
     const navigate = useNavigate();
@@ -52,23 +50,29 @@ export default function Header() {
     })
     return (
         <header>
-            <div >
-                <div className="heads avenir py-2 w-full bg-white gap-4 justify-center items-center px-12 inline" >
+            <div>
+                <div className="heads avenir py-2 w-full bg-white gap-4 justify-center items-center px-12 inline">
                     <Head1 />
-                    <div className='headtext1'>|</div>
+                    <div className="headtext1">|</div>
                     <Head2 />
-                    <div className='headtext1'>|</div>
+                    <div className="headtext1">|</div>
                     <Head3 />
                 </div>
             </div>
 
-            <div >
-                <div className=' bg-prime'>
-                    <div className='con px-12 h-24'>
-                        <div className='nav' >
-                            <div className='imgbox no-underline'
-                                onClick={() => navigate('/home')}>
-                                <img src={MarkImg} alt='logo-theSunuslife' className='markImg '></img>
+            <div>
+                <div className=" bg-prime">
+                    <div className="con px-12 h-24">
+                        <div className="nav">
+                            <div
+                                className="imgbox no-underline"
+                                onClick={() => navigate("/home")}
+                            >
+                                <img
+                                    src={MarkImg}
+                                    alt="logo-theSunuslife"
+                                    className="markImg "
+                                ></img>
                             </div>
                             <div className='contact gap-4 px-2'>
                                 <button className=' nav-fs font-semibold'
@@ -101,53 +105,100 @@ export default function Header() {
                                 </button>
                             </div>
                             <div className='toolbox'>
-                                <select className='px-1 dropdowns'
-                                    onChange={(event) => {
-                                        dispatch(changeCurrency(event.target.value))
-                                    }}>
+                                <select className='px-1 dropdowns'>
                                     <option className='bg-white ' disabled>Currency</option>
-                                    <option className='bg-white' value={0}>AUD</option>
-                                    <option className='bg-white' value={1}>CAD</option>
-                                    <option className='bg-white' value={2}>EUR</option>
-                                    <option className='bg-white' value={3}>GBP</option>
-                                    <option className='bg-white' value={4}>USD</option>
+                                    <option className='bg-white' value='AUD'>AUD</option>
+                                    <option className='bg-white' value='CAD'>CAD</option>
+                                    <option className='bg-white' value='EUR'>EUR</option>
+                                    <option className='bg-white' value='GBP'>GBP</option>
+                                    <option className='bg-white' value='USD'>USD</option>
                                 </select>
 
                                 <div class="flex justify-center items-center cursor-pointer px-1 lens"
-                                    onChange={() => alert("Sorry, we are not out of service!")}>
+                                    onClick={() => alert("Sorry, we are not out of service!")}>
 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <circle cx="10" cy="10" r="8" stroke="black" stroke-width="2" fill="none" />
                                         <line x1="15" y1="15" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
                                     </svg>
-
                                 </div>
-                                <div className='busket' onClick={() => alert("sorry, we are not out of service!")}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <rect x="3" y="5" width="16" height="10" rx="2" ry="2" fill="rgba(0, 110, 255, 0)" stroke="black" stroke-width="1" />
-                                        <line x1="3" y1="5" x2="1" y2="3" stroke="black" stroke-width="1" />
+                                <div
+                                    className="busket"
+                                    onClick={() => alert("sorry, we are not out of service!")}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <rect
+                                            x="3"
+                                            y="5"
+                                            width="16"
+                                            height="10"
+                                            rx="2"
+                                            ry="2"
+                                            fill="rgba(0, 110, 255, 0)"
+                                            stroke="black"
+                                            stroke-width="1"
+                                        />
+                                        <line
+                                            x1="3"
+                                            y1="5"
+                                            x2="1"
+                                            y2="3"
+                                            stroke="black"
+                                            stroke-width="1"
+                                        />
                                         <circle cx="6" cy="18" r="2" fill="black" />
                                         <circle cx="16" cy="18" r="2" fill="black" />
                                     </svg>
                                 </div>
-
-                                <div id="myNav" class="overlay">
-                                    <div class="overlay-content">
-                                        <div>About</div>
-                                        <div>Services</div>
-                                        <div>Clients</div>
-                                        <div>Contact</div>
-                                    </div>
-                                    <span class="closebtn menu" onclick={<closeNav />}>&times;</span>
+                                <div
+                                    className="account"
+                                    onClick={() => alert("sorry, we are not out of service!")}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="32"
+                                        height="32"
+                                        viewBox="0 0 100 100"
+                                    >
+                                        <circle cx="50" cy="30" r="15" fill="black" />
+                                        <ellipse cx="50" cy="70" rx="25" ry="15" fill="#black" />
+                                        <rect x="0" y="0" width="100" height="100" fill="none" />
+                                    </svg>
                                 </div>
-                                <span class="menu" onclick={<openNav />}>&#9776; </span>
 
+                                <div>
+                                    <span class="menu" onClick={openNav}>
+                                        &#9776;
+                                    </span>
+                                </div>
+
+                                <div id="myNav">
+                                    <div className="sidecon">
+                                        <div class="closebtn menu" onClick={closeNav}> &times;</div>
+                                        <div className="aaa"><Selection val="navs" /></div>
+                                        <div className="bartitle">Menu</div>
+                                        <div class="overlay">
+                                            <div class="overlay-content">
+                                                <Contactbar val=" blocks" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </header >
-    );
+        </header>
+
+    )
 }

@@ -16,7 +16,7 @@ export default function FAQsPage() {
             <div className='faqs-subject'>
                 <strong>Frequently Asked Questions</strong>
             </div>
-            <div defaultActiveKey="0" flush className='sentencebox'>
+            <Accordion defaultActiveKey="0" flush className='sentencebox'>
                 {faqs.map(faq => {
                     return (
                         <Accordion.Item eventKey={faq.question_id}>
@@ -29,7 +29,7 @@ export default function FAQsPage() {
                         </Accordion.Item>
                     )
                 })}
-            </div>
+            </Accordion>
         </div>
     );
 }

@@ -17,8 +17,8 @@ export default function Content() {
   return (
     // <SideNavBarLayout title={appInfo.title}>
     <div>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           {/* {routes.map(({ path, element }) => (
           <Route

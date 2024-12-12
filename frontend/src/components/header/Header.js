@@ -1,6 +1,6 @@
 import './Header.css'
 import MarkImg from '../../assets/images/products/14.png'
-// import root from '../../index'
+import { useNavigate } from 'react-router-dom';
 
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
@@ -29,6 +29,7 @@ function Head3() {
 
 
 export default function Header() {
+    const navigate = useNavigate();
     return (
         <header>
             <div >
@@ -45,29 +46,37 @@ export default function Header() {
                 <div className=' bg-prime'>
                     <div className='con px-12 h-24'>
                         <div className='nav' >
-                            <div className='imgbox no-underline' onClick={Header}>
+                            <div className='imgbox no-underline'
+                                onClick={() => navigate('/home')}>
                                 <img src={MarkImg} alt='logo-theSunuslife' className='markImg '></img>
                             </div>
                             <div className='contact gap-4 px-2'>
-                                <button className=' nav-fs font-semibold' onClick={Header}>
+                                <button className=' nav-fs font-semibold'
+                                    onClick={() => navigate('/home')}>
                                     Home
                                 </button>
-                                <button className='nav-fs font-semibold'>
+                                <button className='nav-fs font-semibold'
+                                    onClick={() => navigate('/shop')}>
                                     Shop
                                 </button>
-                                <button className='nav-fs font-semibold'>
+                                <button className='nav-fs font-semibold'
+                                    onClick={() => navigate('/apparel')}>
                                     apparel
                                 </button>
-                                <button className='nav-fs font-semibold'>
+                                <button className='nav-fs font-semibold'
+                                    onClick={() => navigate('/accessories')}>
                                     Accessories
                                 </button>
-                                <button className='nav-fs font-semibold'>
+                                <button className='nav-fs font-semibold'
+                                    onClick={() => navigate('/wholesale')}>
                                     Wholesale
                                 </button>
-                                <button className='nav-fs font-semibold'>
+                                <button className='nav-fs font-semibold'
+                                    onClick={() => navigate('/aboutus')}>
                                     About Us
                                 </button>
-                                <button className='nav-fs font-semibold'>
+                                <button className='nav-fs font-semibold'
+                                    onClick={() => navigate('/faqs')}>
                                     FAQs
                                 </button>
                             </div>
@@ -81,7 +90,8 @@ export default function Header() {
                                     <option className='bg-white' value='USD'>USD</option>
                                 </select>
 
-                                <div class="flex justify-center items-center cursor-pointer px-1 lens">
+                                <div class="flex justify-center items-center cursor-pointer px-1 lens"
+                                    onClick={() => alert("Sorry, we are not out of service!")}>
 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <circle cx="10" cy="10" r="8" stroke="black" stroke-width="2" fill="none" />
@@ -89,7 +99,7 @@ export default function Header() {
                                     </svg>
 
                                 </div>
-                                <div className='busket'>
+                                <div className='busket' onClick={() => alert("sorry, we are not out of service!")}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <rect x="3" y="5" width="16" height="10" rx="2" ry="2" fill="rgba(0, 110, 255, 0)" stroke="black" stroke-width="1" />
                                         <line x1="3" y1="5" x2="1" y2="3" stroke="black" stroke-width="1" />

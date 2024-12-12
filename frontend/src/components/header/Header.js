@@ -61,7 +61,11 @@ export default function Header() {
                                 </button>
                                 <button className='nav-fs font-semibold'
                                     onClick={() => navigate('/apparel')}>
+<<<<<<< Updated upstream
                                     Apparel
+=======
+                                    apparel
+>>>>>>> Stashed changes
                                 </button>
                                 <button className='nav-fs font-semibold'
                                     onClick={() => navigate('/accessories')}>

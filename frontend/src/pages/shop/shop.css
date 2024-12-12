@@ -3,10 +3,10 @@
     letter-spacing: 2px;
     text-transform: uppercase !important;
     text-align: center !important;
-   
+
     font-family: "consolas";
     font-size: 32px;
-    font-weight:900;
+    font-weight: 900;
     /* display: block; */
     /* unicode-bidi: isolate; */
 }
@@ -19,40 +19,47 @@
     align-items: center;
 }
 
-.shopwin{
+.shopwin {
     padding: 48px 5%;
 }
-.shopbox{
+
+.shopbox {
     margin-top: 48px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
-.filter{
+
+.filter {
     width: 250px;
     display: block;
 }
-.clearbtn{
+
+.clearbtn {
     width: 100%;
     text-align: left;
-    font-variant:normal;
+    font-variant: normal;
     font-weight: 500;
     padding: 16px 20px;
     cursor: pointer;
 }
-.listbox{
+
+.listbox {
     display: block;
     width: 100%;
 }
-.newestdown{
+
+.newestdown {
     display: flex;
     justify-content: right;
 }
-.cardImage{
+
+.cardImage {
     height: 200px;
     width: 200px;
-   
+
 }
-.cardbox{
+
+.cardbox {
     padding: 0px 40px;
     display: flex;
     flex-wrap: wrap;

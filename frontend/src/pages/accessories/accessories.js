@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import ProductCard from '../../components/productcard/ProductCard';
 import axios from 'axios';
 import LoadingPanel from '../../components/loadingpanel/LoadingPanel';
+import NoPage from '../../pages/nopage/nopage';
 export default function AccessoriesPage() {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -23,26 +24,25 @@ export default function AccessoriesPage() {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
     return (
+        <>
+            {products.length ? (
+                <div className='accessoriesBox'>
+                    <div className='pageTitle'>
+                        Accessories
+                    </div>
+                    {isLoading ? (
+                        <LoadingPanel title="Products Loading..." />
+                    ) : (
 
-        <div className='accessoriesBox'>
-            <div className='pageTitle'>
-                Accessories
-            </div>
-            {isLoading ? (
-                <LoadingPanel title="Products Loading..." />
-            ) : (
+                        <div className='cardbox' item xs={9}>
 
-                <div className='cardbox' item xs={9}>
-
-                    {products.map((product, index) => {
-                        return (<ProductCard key={product.product_id}
-                            product={product}></ProductCard>);
-                    })}
-                </div>)}
-
-        </div>
-
-
+                            {products.map((product, index) => {
+                                return (<ProductCard key={product.product_id}
+                                    product={product}></ProductCard>);
+                            })}
+                        </div>)}
+                </div>
+            ) : (<NoPage title="No Products" />)}
+        </>
     )
-
 }

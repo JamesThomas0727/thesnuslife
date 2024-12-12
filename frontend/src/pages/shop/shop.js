@@ -29,14 +29,18 @@ const product = {
     "moneytype": 4,
 };
 function ShopPage() {
-    const [faqs, setFaqs] = useState([]);
+    const [products, setProducts] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/faqs')
-            .then(response => setFaqs(response.data))
+        axios.get('http://localhost:5000/products')
+            .then(response => {
+                setProducts(response.data);
+
+            })
             .catch(error => console.error('Error fetching data:', error));
     }, []);
-    
+
     return (
+
         <div className='shopwin'>
             <div className="caption">Shop All</div>
             <div className='shopbox'>
@@ -47,25 +51,29 @@ function ShopPage() {
                         </div>
                         <hr></hr>
                         <div >
-                            <FilterBar></FilterBar>
+                            <FilterBar />
                         </div>
                     </div>
                 </div>
-              
+
                 <div className='listbox'>
                     <div className='newestdown'>
-                        <DropdownButton></DropdownButton>
+                        <DropdownButton />
                     </div>
                     <div className='cardbox' item xs={9}>
-                        
-                        <ProductCard product={product}></ProductCard>
+                        {products.map((product, index) => {
+                            return (
+                                <ProductCard key={product._id}
+                                    product={product}></ProductCard>
+                            );
+                        })}
                     </div>
                     <div className='pagination'>
-                        <Pagination></Pagination>
+                        <Pagination />
                     </div>
 
                 </div>
-                
+
             </div>
         </div>
     )

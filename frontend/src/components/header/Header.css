@@ -1,182 +1,156 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
- 
-    header{
-        width: 100%;
-    }
-    /* img{
+header {
+    width: 100%;
+}
+
+/* img{
         width: 100%;
     } */
-    .imgbox{
-        height: 90px;
-        width: 150px;
-        padding: 10px;
-        position: relative;
-        
+.imgbox {
+    height: 90px;
+    width: 150px;
+    padding: 10px;
+    position: relative;
 
-    }
-    .markImg{
-        /* padding-top: 10px; */
-        /* padding-bottom: 10px; */
-        /* visibility: hidden; */
-        /* cursor: pointer; */
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-        height: 100%;
-     
-        
-        
-    }
-    .heads{
-        width: 100%;
-        height: 40px;
-        /* display: inline; */
-        padding: 8px 0px 8px 0px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-    }
-    .con{
-       display: flex;
-        padding:0px 1%;
-    }
-    .nav{
-        flex-wrap: nowrap;
-        width: 100%;
-        padding-top: 4px;
-        padding-bottom: 4px;
-       
-        /* display: flex; */
-        display: flex;
-        justify-content: space-between;
-    }
-    .menu{
-        font-size: 30px;
-        cursor: pointer;
-        /* padding-left: 20px; */
-        visibility: hidden;
-      }
-    .busket{
-        /* padding-left: 20px; */
-        cursor: pointer;
-    }
-    
-    .nav-fs{
-        font-size: 16px;
-        border: 0px;
-        text-decoration: none;
-        color: black;
-        background-color: rgba(0, 110, 255, 0);
-        /* text-decoration-line: none; */
-        padding-left: 4px;
-        padding-right: 4px;
-        cursor: pointer;
-    }
-    .nav-fs div{
-        /* text-decoration: none; */
-        display: inline;
-    }
-    .bg-prime{
-        padding-top: 4px;
-        padding-bottom: 4px;
-        background-color: rgba(0, 110, 255, 0.733);
-        
-    }
-    .imgbox{
+
+}
+
+.markImg {
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    /* visibility: hidden; */
+    /* cursor: pointer; */
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+
+
+
+}
+
+.heads {
+    width: 100%;
+    height: 40px;
+    /* display: inline; */
+    padding: 8px 0px 8px 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.con {
+    display: flex;
+    padding: 0px 1%;
+}
+
+.nav {
+    flex-wrap: nowrap;
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    /* display: flex; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    font-size: 30px;
+    cursor: pointer;
+    /* padding-left: 20px; */
+    visibility: hidden;
+}
+
+.busket {
+    /* padding-left: 20px; */
+    cursor: pointer;
+}
+
+.nav-fs {
+    font-size: 16px;
+    border: 0px;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(0, 110, 255, 0);
+    /* text-decoration-line: none; */
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+.nav-fs div {
+    /* text-decoration: none; */
+    display: inline;
+}
+
+.bg-prime {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: rgba(0, 110, 255, 0.733);
+
+}
+
+.imgbox {
     width: 10%;
-      cursor: pointer;
-     
-      overflow: hidden;
-      display: flex;
-    }
-    .toolbox{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* width: 15%; */
-    }
-    .overlay {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0, 0.9);
-        overflow-x: hidden;
-        transition: 0.5s;
-      }
-      
-      .overlay-content {
-        position: relative;
-        top: 25%;
-        width: 40%;
-        text-align: center;
-        margin-top: 30px;
-      }
-      
-      .overlay a {
-        padding: 8px;
-        text-decoration: none;
-        font-size: 36px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-      }
-      
-      .overlay a:hover, .overlay a:focus {
-        color: #f1f1f1;
-      }
-      
-      .overlay .closebtn {
-        position: absolute;
-        top: 20px;
-        right: 45px;
-        font-size: 60px;
-      }
-      
-      .dropdowns{
-        border: 1px solid black;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 600;
-        background: rgba(0, 110, 255, 0);
-        /* color: brown; */
-        width: 65px;
-        height: 25.6px;
-        cursor: pointer;
-    }
-    .lens{
-        padding-left: 20px;
-        cursor: pointer;
-    }
-    
-    .contact{
-        
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 70%;
-        margin: 0px;
-        padding: 0px;
-        
-    }
-    .headtext{
-        font-size: 14px;
-        letter-spacing: 3px;
-        display: inline;
-        /* flex-direction: row; */
-        /* position: static; */
-        padding-left: 5px;
-        padding-right: 5px ;
-        /* justify-content: center; */
-        /* align-items: center; */
-    }
-      /* @media screen and (max-height: 450px) {
+    cursor: pointer;
+
+    overflow: hidden;
+    display: flex;
+}
+
+.toolbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 15%; */
+}
+
+
+.dropdowns {
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(0, 110, 255, 0);
+    /* color: brown; */
+    width: 65px;
+    height: 25.6px;
+    cursor: pointer;
+}
+
+.lens {
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.contact {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.headtext {
+    font-size: 14px;
+    letter-spacing: 3px;
+    display: inline;
+    /* flex-direction: row; */
+    /* position: static; */
+    padding-left: 5px;
+    padding-right: 5px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* @media screen and (max-height: 450px) {
         .overlay a {font-size: 20px}
         .overlay .closebtn {
         font-size: 40px;
@@ -184,22 +158,26 @@
         right: 35px;
         }
       } */
-       /* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .menu{
+    .menu {
         visibility: initial;
     }
-    .contact{
+
+    .contact {
         display: none;
     }
-    .imgbox{
+
+    .imgbox {
         width: 90px;
-          
-        }
-    .dropdowns{
-        display: none;    
+
     }
-    .toolbox{
+
+    .dropdowns {
+        display: none;
+    }
+
+    .toolbox {
         width: 30%;
         position: relative;
         left: -10px;
@@ -209,51 +187,96 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .menu{
+    .menu {
         visibility: initial;
     }
-    .toolbox{
+
+    .toolbox {
         width: 30%;
     }
-    .contact{
+
+    .contact {
         display: none;
     }
-    .imgbox{
+
+    .imgbox {
         width: 90px;
-          
-        }
-    .dropdowns{
-        display: none;    
+
+    }
+
+    .dropdowns {
+        display: none;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 873px) {
-    .menu{
+    .menu {
         display: none;
     }
-    .contact{
-        display:initial;
+
+    .contact {
+        display: initial;
         display: flex;
         align-items: center;
     }
-    .dropdowns{
-        display: initial;    
+
+    .dropdowns {
+        display: initial;
     }
-    .toolbox{
+
+    .toolbox {
         width: 15%;
     }
 }
 
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1120px) {
-    
+@media only screen and (min-width: 1120px) {}
+
+.menu:hover .overlay{
+    width: 500px;
+
 }
 
-.menu:hover {
-    
+.overlay {
+    height: 100%;
+    width: 50rcap;
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
 }
 
-    
-    
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 40%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}

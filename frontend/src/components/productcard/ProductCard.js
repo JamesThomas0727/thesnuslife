@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
 import "./ProductCard.css"
-import { addProduct, removeProduct, updateQuantity } from '../../cartSlice';
+import { addProduct, removeProduct, updateQuantity } from '../../store/cartSlice';
 
 //==========================================================================
 const currency_chars = ["A$ ", "CA$ ", "€ ", "£ ", "$ ",];
@@ -9,8 +10,8 @@ export default function ProductCard(props) {
     const product = props.product;
     let currency = useSelector((state) => state.currency.currency); // Access cart state
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     let currency_rate = currency.currency_rate;
-    // console.log(currency_rate, currency);
     const currency_id = currency.currency_id;
     const currency_char = currency_chars[currency_id - 1];
 
@@ -26,7 +27,7 @@ export default function ProductCard(props) {
 
     return (
         <>
-            <div className='pcard'>
+            <div className='pcard' onClick={() => { navigate("/cart") }}>
                 <img src={"/images/products/" + product.product_avatar_id + ".png"}
                     alt={product.product_name} className='cardImage'></img>
                 <strong>{product.product_name}</strong>

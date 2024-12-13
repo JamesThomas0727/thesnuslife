@@ -1,6 +1,6 @@
-import Camera from '../../assets/images/camera.svg'
-import F from '../../assets/images/image (82).svg'
-import Img6 from '../../assets/images/image (6).svg'
+import Camera from '/images/camera.svg'
+import F from '/images/image (82).svg'
+import Img6 from '/images/image (6).svg'
 import './Footer.css'
 
 export default function Iconbox() {

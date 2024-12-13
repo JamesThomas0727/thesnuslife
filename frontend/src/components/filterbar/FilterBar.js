@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Accordion from 'react-bootstrap/Accordion';
 import RangeSlider from "../rangeslider/rangeslider";
-import { categoryFilter, priceFilter, clearFilter } from '../../filterSlice';
+import { categoryFilter, priceFilter, clearFilter } from '../../store/filterSlice';
 import "./FilterBar.css";
 
 const brands = ['ALL', 'Bundle Deals', 'Accessories', 'Apparel', '77', 'Ace'];

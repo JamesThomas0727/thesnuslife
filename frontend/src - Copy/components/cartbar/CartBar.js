@@ -1,5 +1,5 @@
 import "./CartBar.css";
-import mark from "../../assets/images/products/15.png";
+import mark from "/images/products/15.png";
 import CartCard from "../cartcard/CartCard";
 
 function closeWin() {

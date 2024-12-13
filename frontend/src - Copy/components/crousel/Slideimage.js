@@ -1,5 +1,5 @@
 
-import Imgs from "../../assets/images/1733738899262_velo-peppermint-storm.png"
+import Imgs from "/images/1733738899262_velo-peppermint-storm.png"
 export default function Slideimage() {
     return (
         <>

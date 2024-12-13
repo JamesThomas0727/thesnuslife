@@ -1,4 +1,4 @@
-import Cartcardimg from '../../assets/images/products/10.png'
+import Cartcardimg from '/images/products/10.png'
 import './CartCard.css'
 // import {closeNav} from '../header/Header'
 

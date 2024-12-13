@@ -1,5 +1,5 @@
 import './Header.css';
-import MarkImg from '../../assets/images/products/14.png';
+import MarkImg from '/images/products/14.png';
 import { useNavigate } from 'react-router-dom';
 import CartBar from '../cartbar/CartBar';
 

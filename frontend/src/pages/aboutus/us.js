@@ -1,7 +1,6 @@
 
 import './aboutus.css'
-import Myface from '../../assets/images/products/13.png'
-export default function Us(){
+export default function Us() {
     return (
         <div className='contain'>
             <p id="about">ABOUT US</p>
@@ -13,7 +12,7 @@ export default function Us(){
                     <p className='para'>We are always trying to do better. If there is an issue, big or small, our customer service team is ready to help you over email Info@thesnuslife.com</p>
                 </div>
                 <div className='picture'>
-                    <img id='faces' alt='myface' src={Myface}></img>
+                    <img id='faces' alt='myface' src="/images/products/13.png"></img>
                 </div>
 
             </div>

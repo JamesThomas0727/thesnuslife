@@ -1,4 +1,4 @@
-import Imglarge from '../../assets/images/logo.jpeg'
+import Imglarge from '/images/logo.jpeg'
 // 1732898643881_Studio-Project-64
 import './Mainwin.css'
 // 1718339380537_snuslifeLogo

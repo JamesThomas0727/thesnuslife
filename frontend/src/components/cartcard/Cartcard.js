@@ -1,4 +1,4 @@
-import Cartcardimg from '../../assets/images/products/10.png'
+
 import './CartCard.css'
 // import {closeNav} from '../header/Header'
 
@@ -24,7 +24,7 @@ export default function CartCard() {
         <>
             <div id="cartcad">
                 <div className='paycartbox'>
-                    <img src={Cartcardimg} alt='Cartcardimg' className='imgboxs'></img>
+                    <img src="/images/products/10.png" alt='Cartcardimg' className='imgboxs'></img>
                     <div className="textsbox" id="nopadding">
                         <div className="collas colls">
                             <div className="thingname " id='morefit'>{thingname}</div>

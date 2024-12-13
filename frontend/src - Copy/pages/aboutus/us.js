@@ -1,7 +1,7 @@
 
 import './aboutus.css'
-import Myface from '../../assets/images/products/13.png'
-export default function Us(){
+import Myface from '/images/products/13.png'
+export default function Us() {
     return (
         <div className='contain'>
             <p id="about">ABOUT US</p>

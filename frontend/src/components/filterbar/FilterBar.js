@@ -21,10 +21,6 @@ export default function FilterBar() {
     const dispatch = useDispatch();
 
     const categoryFilter = (event) => {
-        // let categoryId = event.target.id;
-        // let filterCategories[categoryId] = event.target.value;
-        // const filter =
-        // dispatch(setFilter(filterCategories))
     }
 
     const priceFilter = (event) => {

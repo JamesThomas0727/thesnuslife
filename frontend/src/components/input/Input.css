@@ -12,3 +12,10 @@
     color: aliceblue;
 
 }
+.nolabelinput{
+    border-radius: 3px;
+    border: 2px solid rgba(128, 128, 128, 0.726);
+    /* outline: 1px solid rgb(83, 83, 83) ; */
+    padding: 8px;
+    margin: 5px;
+}

@@ -7,66 +7,73 @@ import { setSort } from '../../sortSlice';
 import "./DropdownButton.css";
 
 
-const SortMethods = ["Newest", "Price (low to high)", "Price (high to low)",
-    "Name (A to Z)", "Name (Z to A)", "Strength (low to high)",
+const SortMethods = [
+    "Newest",
+    "Oldest",
+    "Price (low to high)",
+    "Price (high to low)",
+    "Name (A to Z)",
+    "Name (Z to A)",
     "Strength (low to high)",
+    "Strength (high to high)",
 ];
 
 function DropdownButton(props) {
+    //===========================================================
     const [title, setTitle] = useState(SortMethods[0]);
     const dispatch = useDispatch();
 
     const handleClick = (event) => {
-        // this.setState({ title: "" });
-        let field = event.target.id;
+        setTitle(event.target.title);
+        let field = (event.target.text);
         let sortMethod = {};
         switch (field) {
-            case 1:
+            case "Newest":
                 sortMethod = {
-                    "field": "registered",
-                    "DES": true
+                    field: "registered",
+                    des: true
                 }
                 break;
-            case 2:
+            case "Oldest":
                 sortMethod = {
-                    "field": "registered",
-                    "DES": false
+                    field: "registered",
+                    des: false
                 }
                 break;
-            case 3:
+            case "Price (low to high)":
                 sortMethod = {
-                    "field": "new_price",
-                    "DES": true
+                    field: "new_price",
+                    des: true
                 }
                 break;
-            case 4:
+            case "Price (high to low)":
                 sortMethod = {
-                    "field": "new_price",
-                    "DES": false
+                    field: "new_price",
+                    des: false
                 }
                 break;
-            case 5:
+            case "Name (A to Z)":
                 sortMethod = {
-                    "field": "product_name",
-                    "DES": true
+                    field: "product_name",
+                    des: true
                 }
                 break;
-            case 6:
+            case "Name (Z to A)":
                 sortMethod = {
-                    "field": "product_name",
-                    "DES": false
+                    field: "product_name",
+                    des: false
                 }
                 break;
-            case 7:
+            case "Strength (low to high)":
                 sortMethod = {
-                    "field": "strength",
-                    "DES": true
+                    field: "strength",
+                    des: false,
                 }
                 break;
-            case 8:
+            case "Strength (high to low)":
                 sortMethod = {
-                    "field": "strength",
-                    "DES": false
+                    field: "strength",
+                    des: true
                 }
                 break;
             default:
@@ -88,7 +95,7 @@ function DropdownButton(props) {
                         onClick={handleClick}
                         key={index}
                         id={index + 1}
-                        value={text}>{text}
+                        title={text}>{text}
                     </Dropdown.Item>
                 ))}
             </Dropdown.Menu>

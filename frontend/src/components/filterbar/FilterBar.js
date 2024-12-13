@@ -1,11 +1,13 @@
 import React from "react";
+import axios from 'axios';
+
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import Accordion from 'react-bootstrap/Accordion';
 import RangeSlider from "../rangeslider/rangeslider";
+import { categoryFilter, priceFilter, clearFilter } from '../../filterSlice';
 import "./FilterBar.css";
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { addFilter, priceFilter, clearFilter } from '../../filterSlice';
 
 const brands = ['ALL', 'Bundle Deals', 'Accessories', 'Apparel', '77', 'Ace'];
 const price = [];
@@ -16,19 +18,26 @@ const clearfilterx = [];
 
 
 export default function FilterBar() {
-    const [filter, setFilter] = useState(['ALL', 'ALL', 'ALL', 'ALL',]);
-    const filters = useSelector((state) => state.filters);
+    //===================================================================
+    const filters = useSelector((state) => state.filter);
     const dispatch = useDispatch();
 
-    const categoryFilter = (event) => {
+    const categoryClick = (event) => {
+        // let filter = {};
+        // dispatch(setFilter(filter));
     }
 
-    const priceFilter = (event) => {
+    const priceChange = (event) => {
         const max = 0, min = 0;
         const filter = [max, min];
         dispatch(priceFilter(filter))
     }
-    // const
+    //==================================================================
+    const handleChange = (event) => {
+        alert("tterwt");
+        console.log("adfaf")
+    }
+    //==================================================================
     return (
         <div>
             <Accordion>
@@ -39,7 +48,13 @@ export default function FilterBar() {
                     {brands.map((brand, index) => {
                         return (<Accordion.Body
                             className="body"
-                            onClick={categoryFilter}
+                            onClick={() => {
+                                let category = {
+                                    id: 0,
+                                    val: brand
+                                }
+                                dispatch(categoryFilter(category));
+                            }}
                             key={index}
                             id={1}
                             value={brand}>
@@ -53,9 +68,8 @@ export default function FilterBar() {
                     </Accordion.Header>
                     <Accordion.Body className="body">
                         <RangeSlider sx={{ width: 30 }}
-                            onChange={() => {
-                                dispatch(priceFilter)
-                            }}
+                            onChange={handleChange}
+                            onClick={handleChange}
                         >
                         </RangeSlider>
                     </Accordion.Body>
@@ -68,6 +82,13 @@ export default function FilterBar() {
                         return (<Accordion.Body className="body"
                             key={index}
                             id={1}
+                            onClick={() => {
+                                let category = {
+                                    id: 1,
+                                    val: flavor
+                                }
+                                dispatch(categoryFilter(category));
+                            }}
                             value={flavor}>
                             {flavor}
                         </Accordion.Body>);
@@ -81,6 +102,13 @@ export default function FilterBar() {
                         return (<Accordion.Body className="body"
                             key={index}
                             id={1}
+                            onClick={() => {
+                                let category = {
+                                    id: 2,
+                                    val: pot
+                                }
+                                dispatch(categoryFilter(category));
+                            }}
                             value={pot}>
                             {pot}
                         </Accordion.Body>);
@@ -94,6 +122,13 @@ export default function FilterBar() {
                         return (<Accordion.Body
                             className="body" key={index}
                             id={1}
+                            onClick={() => {
+                                let category = {
+                                    id: 3,
+                                    val: product_type
+                                }
+                                dispatch(categoryFilter(category));
+                            }}
                             value={product_type}>
                             {product_type}
                         </Accordion.Body>);
@@ -101,7 +136,7 @@ export default function FilterBar() {
                 </Accordion.Item>
                 <Accordion.Item eventKey="clearfilterx" sx={{ textAlign: "left" }}>
                     <div className="clearbtn"
-                        onClick={() => dispatch(clearFilter)}>Clear Filter
+                        onClick={() => dispatch(clearFilter())}>Clear Filter
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X</div>
                 </Accordion.Item>
             </Accordion>

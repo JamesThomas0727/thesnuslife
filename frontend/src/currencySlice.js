@@ -4,14 +4,20 @@ const currencySlice = createSlice({
     name: "currency",
     initialState: {
         currency: {
-            "currency_id": 4,
+            "currency_id": 5,
             "currency_type": "USD",
-            "currency_rate": 1
+            "currency_rate": 1,
         }
     },
     reducers: {
         changeCurrency: (state, action) => {
-            state.currency = action.payload;
+            let currency = action.payload;
+            console.log(action.payload);
+            state.currency = {
+                currency_id: currency.currency_id,
+                currency_type: currency.currency_name,
+                currency_rate: currency.currency_rate,
+            }
         }
     }
 })

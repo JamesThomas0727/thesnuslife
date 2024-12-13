@@ -3,11 +3,19 @@ import { createSlice } from '@reduxjs/toolkit';
 const sortSlice = createSlice({
     name: 'sort',
     initialState: {
-        sort: { "field": "registered", "DES": true }, // Array of sort items
+        sort: {
+            "field": "registered",
+            "des": true,
+        }
     },
     reducers: {
         setSort: (state, action) => {
-            state.sort = action.payload;
+            let sortMethod = action.payload;
+            console.log(sortMethod)
+            state.sort = {
+                field: sortMethod.field,
+                des: sortMethod.des,
+            }
         },
     },
 });

@@ -1,24 +1,28 @@
 import * as React from 'react';
-import "./ProductCard.css"
 import { useSelector, useDispatch } from 'react-redux';
+import "./ProductCard.css"
 import { addProduct, removeProduct, updateQuantity } from '../../cartSlice';
 
+//==========================================================================
 const currency_chars = ["A$ ", "CA$ ", "€ ", "£ ", "$ ",];
 export default function ProductCard(props) {
     const product = props.product;
     let currency = useSelector((state) => state.currency.currency); // Access cart state
-    let currency_rate = currency.currency_rate;
-    console.log(currency_rate, currency);
-    const currency_id = currency.currency_id;
-    const currency_char = currency_chars[currency_id];
     const dispatch = useDispatch();
+    let currency_rate = currency.currency_rate;
+    // console.log(currency_rate, currency);
+    const currency_id = currency.currency_id;
+    const currency_char = currency_chars[currency_id - 1];
 
     const handleAddProduct = (event) => {
-        const newProduct = { id: event.target.id, quantity: 1 };
+        const newProduct = {
+            id: event.target.id,
+            name: product.product_name,
+            price: product.new_price,
+            quantity: 1
+        };
         dispatch(addProduct(newProduct));
     };
-
-
 
     return (
         <>

@@ -1,14 +1,12 @@
 import './Header.css';
 import MarkImg from '../../assets/images/products/14.png';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeCurrency } from '../../currencySlice';
-import { useState, useEffect, useRef } from 'react';
 import Cartbar from '../cartwindow/Cart';
-import axios from 'axios';
+
 function openNav() {
-    console.log(document.getElementById('myNav').style);
+    // console.log(document.getElementById('myNav').style);
     document.getElementById('myNav').style.width = '30%';
+
 }
 
 function closeNav() {
@@ -80,6 +78,7 @@ function Contactbar(props) {
                 About Us
             </div>
             <div className="nav-fs font-semibold" onClick={() => navigate('/faqs')}>
+
                 FAQs
             </div>
         </div>
@@ -90,45 +89,24 @@ function Selection(props) {
     if (props.val) {
         temp = props.val;
     }
-    const initState = { "currency_id": 5, "currency_name": "USD", "currency_rate": 1 };
-    const [currencies, setCurrencies] = useState(initState,);
-
-    //================================================================
-    const hasRun = useRef(false);
-    useEffect(() => {
-        getCurrency();
-    }, []);
-    const getCurrency = () => {
-        axios.get("http://localhost:5000/currencies")
-            .then((res) => setCurrencies(res.data))
-            .catch(err => console.error(err));
-    }
-
-    const dispatch = useDispatch();
-    const handleChange = (event) => {
-        let currency = currencies.filter(currency =>
-            currency.currency_id == Number(event.target.value)
-        );
-        dispatch(changeCurrency(currency[0]));
-    }
     return (
-        <select className={temp} onChange={handleChange}>
+        <select className={temp}>
             <option className="bg-white " disabled>
                 Currency
             </option>
-            <option className="bg-white" value="1">
+            <option className="bg-white" value="AUD">
                 AUD
             </option>
-            <option className="bg-white" value="2">
+            <option className="bg-white" value="CAD">
                 CAD
             </option>
-            <option className="bg-white" value="3">
+            <option className="bg-white" value="EUR">
                 EUR
             </option>
-            <option className="bg-white" value="4">
+            <option className="bg-white" value="GBP">
                 GBP
             </option>
-            <option className="bg-white" selected value="5">
+            <option className="bg-white" value="USD">
                 USD
             </option>
         </select>
@@ -284,6 +262,7 @@ export default function Header() {
                 <div>
                     <Cartbar />
                 </div>
+
             </div>
         </header>
     )

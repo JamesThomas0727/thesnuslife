@@ -1,16 +1,22 @@
 import * as React from 'react';
+import axios from 'axios';
+import { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import FilterBar from "../../components/filterbar/FilterBar";
-import DropdownButton from '../../components/dropdown/Dropdown';
+import SortButton from '../../components/dropdown/Dropdown';
 import ProductCard from '../../components/productcard/ProductCard';
 import Pagination from '../../components/pagination/Pagination';
-import "./shop.css";
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import NoPage from '../nopage/nopage';
 import LoadingPanel from "../../components/loadingpanel/LoadingPanel";
+import NoPage from '../nopage/nopage';
+import { sortReducer } from '../../sortSlice';
 
+import "./shop.css";
+var show_products_list = [];
 function ShopPage() {
-
+    //=============================================================
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch();
+    //=============================================================
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -19,79 +25,76 @@ function ShopPage() {
 
         return () => clearTimeout(timer);
     }, []);
+    //=============================================================
 
-    const [currencyRates, setCurrencyRates] = useState([]);
-    useEffect(() => {
-        axios.get('http://localhost:5000/currencyRates')
-            .then(response => {
-                currencyRates = response.data;
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    });
-
+    //=============================================================
     const [products, setProducts] = useState([]);
+    const hasRun = useRef(false);
     useEffect(() => {
+        getProducts();
+    }, []);
+    const getProducts = () => {
         axios.get('http://localhost:5000/products')
             .then(response => {
                 let products = response.data;
+                show_products_list = products;
                 let title = "No Products";
-                if (products.length === 0)
+                if (show_products_list.length === 0)
                     return (
                         <NoPage title={title} />);
                 else setProducts(response.data);
                 setIsLoading(false);
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error =>
+                console.error('Error fetching product data:', error));
+    }
+    //=============================================================
+    const sortMethod = useSelector((state) => {
+        return state.sort.sort;
+    });
+    useEffect(() => {
+        sortProducts();
     }, []);
 
-    function productSort(event) {
-        let orderby = event.target.id;
-        switch (orderby) {
-            case 1:
-                products.sort((a, b) => {
-                    return a.regitered - b.regitered;
-                });
-                break;
-            case 2:
-                products.sort((a, b) => {
-                    return b.regitered - a.regitered;
-                });
-                break;
-            case 3:
-                products.sort((a, b) => {
-                    return a.new_price - b.new_price;
-                });
-                break;
-            case 4:
-                products.sort((a, b) => {
-                    return b.new_price - a.new_price;
-                });
-                break;
-            case 5:
-                products.sort((a, b) => {
-                    return a.product_name - b.product_name;
-                });
-                break;
-            case 6:
-                products.sort((a, b) => {
-                    return a.strength - b.strength;
-                });
-                break;
-            case 7:
-                products.sort((a, b) => {
-                    return b.strength - a.strength;
-                });
-                break;
-            default:
-                break;
-        }
-        console.log(products);
+    const sortProducts = () => {
+        let field = sortMethod.field;
+        let des = sortMethod.des;
+        setIsLoading(true);
+        show_products_list.sort(function (a, b) {
+            if (des) {
+                if (a[field] > b[field]) return 1;
+                else return -1;
+            }
+            else {
+                if (a[field] > b[field]) return -1;
+                else return 1;
+            }
+        });
+        setIsLoading(false);
     }
+    //==============================================================
+    const filter = useSelector((state) => {
+        return state.filter.filter;
+    });
+    useEffect(() => {
+        let brand = filter.categories[0];
+        let favor = filter.categories[1];
+        let pot = filter.categories[2];
+        let type = filter.categories[3];
+        let price_max = (filter.price[0] == "ALL");
+        let price_min = filter.price[1];
+        console.log(brand);
+        show_products_list = products.filter((product, index) => {
+            if (brand == "ALL") return true;
+            else return (product.brand === brand);
+        });
+    }, [])
+    console.log(show_products_list.length)
+    //==============================================================
     return (
         <>
             <div className='shopwin'>
                 <div className="caption">Shop All</div >
-
                 <div className='shopbox'>
                     <div container spacing={2}>
                         <div className='filter'>
@@ -104,23 +107,20 @@ function ShopPage() {
                             </div>
                         </div>
                     </div>
-
-
                     {isLoading ? (
                         <LoadingPanel title="Products Loading..." />
                     ) : (<>
                         {products.length ? (
                             <div className='listbox'>
                                 <div className='newestdown'>
-                                    <DropdownButton
-                                        onChange={productSort} />
+                                    <SortButton
+                                    />
                                 </div>
                                 <div className='cardbox' item xs={9}>
-                                    {products.map((product, index) => {
+                                    {show_products_list.map((product, index) => {
                                         return (
                                             <ProductCard key={product._id}
-                                                product={product}
-                                                currency={currencyRates}></ProductCard>
+                                                product={product} />
                                         );
                                     })}
                                 </div>

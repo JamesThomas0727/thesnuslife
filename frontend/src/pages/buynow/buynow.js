@@ -20,7 +20,7 @@ export default function BuyPage() {
                         <div className='cardname bold'>Ace XX mas Edition 16mg</div>
                         <div className='cardprice'>$4.99</div>
                         <div className='inputpart'>
-                            <label for="counter">Quantity</label><br></br>
+                            <label>Quantity</label><br></br>
                             <input type='number' name='counter' min={1}></input>
                         </div>
                         <div className='addsth'>

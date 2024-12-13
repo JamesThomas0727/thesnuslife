@@ -1,5 +1,4 @@
 import "./CartBar.css";
-import mark from "/images/products/15.png";
 import CartCard from "../cartcard/CartCard";
 
 function closeWin() {
@@ -28,7 +27,7 @@ export default function CartBar() {
           </div>
           <div className="carttitle">Cart</div>
           <div className="cartmark">
-            <img id="nopad" src={mark} alt="mark"></img>
+            <img id="nopad" src="/images/1.png" alt="mark"></img>
           </div>
         </div>
         <div className="cartbox">

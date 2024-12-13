@@ -3,7 +3,7 @@ import SortIcon from '@mui/icons-material/Sort';
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSort } from '../../sortSlice';
+import { setSort } from '../../store/sortSlice';
 import "./DropdownButton.css";
 
 

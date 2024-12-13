@@ -1,12 +1,11 @@
-import Imglarge from '/images/logo.jpeg'
-// 1732898643881_Studio-Project-64
+
 import './Mainwin.css'
-// 1718339380537_snuslifeLogo
+
 export default function Mainwin() {
     return (
         <div className="mainwin">
             {/* <div> */}
-            <img id="imglarge" src={Imglarge} alt='win'></img>
+            <img id="imglarge" src="/images/logo.jpeg" alt='win'></img>
             {/* </div> */}
 
             <div>

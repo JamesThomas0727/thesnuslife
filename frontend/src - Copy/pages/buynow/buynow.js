@@ -1,15 +1,9 @@
-import './cartpage.css'
-import Largeimg from '/images/products/18.png'
-
+import './buynow.css'
 
 import { useNavigate } from 'react-router-dom';
 
-export default function Cartpage() {
+export default function BuyPage() {
     const navigate = useNavigate();
-
-
-
-
     return (
         <>
             <div className='cartpage'>
@@ -20,14 +14,14 @@ export default function Cartpage() {
                 </div>
                 <div className='mainwins'>
                     <div className='imgcontainer'>
-                        <img src={Largeimg} alt='largeimg'></img>
+                        <img src="/images/products/1.png" alt='largeimg'></img>
                     </div>
                     <div className='buycard'>
                         <div className='cardname bold'>Ace XX mas Edition 16mg</div>
                         <div className='cardprice'>$4.99</div>
                         <div className='inputpart'>
-                            <label for="counter">Quantity</label><br></br>
-                            <input type='number' name='counter' ></input>
+                            <label>Quantity</label><br></br>
+                            <input type='number' name='counter' min={1}></input>
                         </div>
                         <div className='addsth'>
                             <div className='addbtn'>Add To Cart</div>
@@ -66,9 +60,9 @@ export default function Cartpage() {
                 <div className='intoruce'>intoruduction of things Ace Superwhite offers flavor of strawberry an dvanila in its ACE XX -   ... .. ...</div>
                 <div className='courcelbox'>
                     <div className='courceltltle  bold'>
-                        Recently insited products
+                        Recently Visited Products
                     </div>
-                    <div className='courcel'>
+                    <div className='courusel'>
 
                     </div>
 

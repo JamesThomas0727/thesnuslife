@@ -4,7 +4,7 @@ import Iconbox from './Iconbox'
 
 export default function Footer() {
     return (
-        < div strokeWidth" footer" >
+        < div className="footer" >
             <About />
             <Iconbox />
         </div >

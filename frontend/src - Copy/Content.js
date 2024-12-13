@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import appInfo from './app-info';
-import routes from './app-routes';
 import HomePage from './pages/home/home';
 import ShopPage from './pages/shop/shop';
 import ApparelPage from './pages/apparel/apparel';
@@ -8,6 +6,7 @@ import AccessoriesPage from './pages/accessories/accessories';
 import WholesalePage from './pages/wholesale/wholesale';
 import AboutUsPage from './pages/aboutus/aboutus';
 import FAQsPage from './pages/faqs/faqs';
+import CartPage from './pages/buynow/buynow';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 export default function Content() {
@@ -51,6 +50,14 @@ export default function Content() {
           <Route
             path='/aboutus'
             element={<AboutUsPage />}
+          />
+          <Route
+            path='/payment'
+            element={<AboutUsPage />}
+          />
+          <Route
+            path='/cart'
+            element={<CartPage />}
           />
         </Routes>
       </BrowserRouter>

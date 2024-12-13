@@ -1,5 +1,4 @@
 import './Header.css';
-import MarkImg from '/images/products/14.png';
 import { useNavigate } from 'react-router-dom';
 import CartBar from '../cartbar/CartBar';
 
@@ -125,7 +124,7 @@ export function Navbar() {
                             onClick={() => navigate('/home')}
                         >
                             <img
-                                src={MarkImg}
+                                src='/images/products/14.png'
                                 alt="logo-theSunuslife"
                                 className="markImg "
                             />

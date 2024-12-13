@@ -1,0 +1,45 @@
+.accessoriesBox{
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0px;
+
+}
+.pageTitle{
+    font-weight: 600;
+    font-size: 32px;
+    padding: 0px 24px;
+    text-align: center;
+}
+.accBox{
+    margin: 0px 5%;
+}
+
+@media only screen and (max-width: 600px) {
+    .pcard{
+        width: 150px;
+        
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .pcard{
+        width: 150px;
+        
+    }
+}
+@media only screen and (min-width: 600px) {
+    .pcard{
+        width: 200px;
+        
+    }
+}
+
+
+
+
+
+
+    
+    

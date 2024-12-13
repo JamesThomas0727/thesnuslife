@@ -1,0 +1,71 @@
+.pcard {
+    max-width: 180px;
+    width: 150px;
+    height: auto;
+    margin: 15px;
+    text-align: center;
+    font-family: arial;
+    background-color: transparent;
+    border: none;
+
+}
+
+.avatar {
+    width: 100%;
+    border: none;
+}
+
+.productname {
+    font-size: 16px;
+    font-family: "consolas";
+}
+
+.price {
+    padding: 3px;
+    margin: 2px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: "consolas";
+}
+
+.visible {
+    display: none;
+}
+
+.price-strike {
+    font-size: 15px;
+    color: grey;
+    font-family: "consolas";
+    text-decoration: line-through;
+}
+
+.card-button {
+    /* display: none; */
+    visibility: hidden;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.pcard:hover .card-button {
+    visibility: visible;
+}
+
+.pcard p {
+    text-align: center;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+}
+
+.price-strike {
+    display: flex;
+    justify-content: center;
+}

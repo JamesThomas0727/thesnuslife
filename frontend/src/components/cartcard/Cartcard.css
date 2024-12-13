@@ -1,65 +1,19 @@
-.cartcard{
-    width: 100%;
-    margin-top: 15px;
-    border-bottom: 1px solid black;
-    height: 150px;
-    display: flex;
-    /* flex-wrap:wrap;  */
-    
+#morefit{
+    margin:  10px 0px;
 }
-
-.imgboxs{
-    margin: 0px;
-    width: 120px;
-    height: 120px;
+#nopadding{
+   padding: 10px;
 }
-.addbox{
-    
-    display: flex;
-    justify-content: space-between;
-    position: static;
-align-items:end;
-    /* width: 100px; */
-    margin: 4px 30px;
-    justify-content:center;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 0px
-    
-
+#center{
+    margin: 0px 100px 20px 100px;
 
 }
-.val{
-    
-    margin: 0px 30px;
+#addedcard{
+    margin: 10px 0px;
+    border-bottom: 1px solid gray;
 }
-.textsbox{
-    display: block;
-    width: 100%;
-    padding-left: 10px;
-}
-.colls{
-    display: flex;
-    flex-wrap: nowrap;
-}
-.textbox{
-    width: 100%;
-    display: block;
-}
-.bold{
-    font-weight: 700;
+.closex{
     font-size: 20px;
-}
-.closebtn{
-    cursor:pointer;
-}
-.poundprice{
-    font-size: 16px;
-    margin-top: 8px;
-}
-.thingname{
-    font-size: 16px;
-}
-.add, .minus{
+    font-weight: 600;
     cursor: pointer;
 }

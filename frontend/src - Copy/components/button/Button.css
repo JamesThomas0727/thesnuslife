@@ -1,0 +1,42 @@
+.button{
+    background-color: rgba(209, 209, 209, 0.575);
+    color: black;
+    font-size: 16px;
+    width: 138.48px;
+    height: 40;
+    padding: 5px 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   background-color: rgb(236, 236, 236);
+   border-radius: 5px;
+    
+}
+
+.textbtn{
+    padding: 0px 12px;
+    width: 243px;
+    height: 24px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: left;
+}
+btbox1{
+    display: inline;
+    /* text-align: left; */
+    /* width: 30%; */
+}
+btbox2{
+    display: inline;
+    /* text-align: left; */
+}
+.box3{
+    display: block;
+
+    /* text-align: left; */
+    
+}

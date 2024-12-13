@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import appInfo from './app-info';
-import routes from './app-routes';
 import HomePage from './pages/home/home';
 import ShopPage from './pages/shop/shop';
 import ApparelPage from './pages/apparel/apparel';

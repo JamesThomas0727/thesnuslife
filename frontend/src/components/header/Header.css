@@ -5,23 +5,14 @@ header {
     overflow: hidden;
 }
 
-/* img{
-        width: 100%;
-    } */
 .imgbox {
     height: 90px;
     width: 150px;
     padding: 10px;
     position: relative;
-
-
 }
 
 .markImg {
-    /* padding-top: 10px; */
-    /* padding-bottom: 10px; */
-    /* visibility: hidden; */
-    /* cursor: pointer; */
     width: 100%;
     padding: 0px;
     margin: 0px;
@@ -62,12 +53,10 @@ header {
 .menu {
     font-size: 30px;
     cursor: pointer;
-    /* padding-left: 20px; */
     visibility: hidden;
 }
 
 .busket {
-    /* padding-left: 20px; */
     cursor: pointer;
 }
 
@@ -161,10 +150,10 @@ header {
     background-color: rgba(255, 255, 255, 0.8);
     overflow-x: hidden;
     transition: 0.2s;
- 
     display: block;
-    
+
 }
+
 @media only screen and (max-width: 600px) {
     .menu {
         visibility: initial;
@@ -188,6 +177,7 @@ header {
         position: relative;
         left: -10px;
     }
+
     #myNav {
         height: 100%;
         width: 0px;
@@ -197,11 +187,11 @@ header {
         right: 0;
         background-color: rgba(255, 255, 255, 0.8);
         overflow-x: hidden;
-        
+
         display: block;
-        
+
     }
-   
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -226,6 +216,7 @@ header {
     .dropdowns {
         display: none;
     }
+
     #myNav {
         height: 100%;
         width: 0px;
@@ -236,11 +227,11 @@ header {
         background-color: rgba(255, 255, 255, 0.8);
         overflow-x: hidden;
         transition: 0.2s;
-     
+
         display: block;
-        
+
     }
-    
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -248,11 +239,13 @@ header {
     .menu {
         display: none;
     }
+
     #myNav {
         width: 0px;
         display: none;
-        
+
     }
+
     .contact {
         display: initial;
         display: flex;
@@ -266,8 +259,8 @@ header {
     .toolbox {
         width: 15%;
     }
-    
-    
+
+
 }
 
 
@@ -277,7 +270,7 @@ header {
 
 
 
-.navs{
+.navs {
     border: 1px solid black;
     border-radius: 6px;
     font-size: 14px;
@@ -288,7 +281,8 @@ header {
     height: 25.6px;
     cursor: pointer;
 }
-.bartitle{
+
+.bartitle {
     width: 100%;
     font-size: 30px;
     font-weight: 500;
@@ -296,55 +290,46 @@ header {
     display: flex;
     justify-content: center;
 }
-.closebtn{
+
+.closebtn {
     color: black;
     width: 100%;
     display: flex;
     text-align: center;
     justify-content: right;
-   
+
 }
-.blocks{
+
+.blocks {
     display: block;
     flex-wrap: wrap;
-  
-    
+
+
     text-align: center;
 }
-.blocks .nav-fs{
+
+.blocks .nav-fs {
     font-size: large;
     margin-top: 20px;
     font-weight: 500;
 }
 
-.sidecon{
+.sidecon {
     height: 100%;
     display: block;
     flex-wrap: wrap;
     justify-content: center;
-    
+
 
 }
-.nav{
+
+.nav {
     display: flex;
     width: 100%;
 }
-.aaa{
+
+.aaa {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
-/* #myNav {
-    height: 100%;
-    width: 0px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    overflow-x: hidden;
-    transition: 0.5s;
- 
-    display: block;
-    
-} */

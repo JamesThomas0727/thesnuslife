@@ -1,0 +1,16 @@
+.dropdown {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 0px;
+    
+}
+
+.dropdown:hover {
+    color: white;
+    background-color: rgb(57, 56, 56);
+}
+#dropdown-sort{
+    margin: 0px;
+}

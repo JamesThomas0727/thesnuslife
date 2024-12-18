@@ -16,8 +16,7 @@ const filterSlice = createSlice({
             state.filter.categories[cate_id] = cate_val;
         },
         priceFilter: (state, action) => {
-            const [max, min] = action.payload;
-            state.filters.price = [min, max];
+            state.filter.price = action.payload;
         },
         clearFilter: (state, action) => {
             state.filter = {

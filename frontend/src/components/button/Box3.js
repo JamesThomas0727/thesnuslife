@@ -6,8 +6,8 @@ import '../footer/Footer.css'
 export default function Box3(){
     return(
         <div className='box3'>
-        <Textbox text = "Subsicibe Here*" />
-        <div className='inemail'>
+        <Textbox text = "Subsicibe Here*"/>
+        <div className='in-email'>
             <Input   text = "Your email" />
         </div>
         <div className='smallt'>

@@ -1,0 +1,22 @@
+#morefit{
+    margin:  10px 0px;
+}
+#nopadding{
+   padding: 10px;
+}
+#center{
+    margin: 0px 100px 20px 100px;
+
+}
+#addedcard{
+    margin: 10px 0px;
+    border-bottom: 1px solid gray;
+}
+.closex{
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+#cartcad{
+    border-bottom: 1px solid black;
+}

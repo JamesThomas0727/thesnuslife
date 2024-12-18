@@ -3,6 +3,7 @@ import './buynow.css'
 import { useNavigate } from 'react-router-dom';
 
 export default function BuyPage() {
+
     const navigate = useNavigate();
     return (
         <>
@@ -18,7 +19,7 @@ export default function BuyPage() {
                     </div>
                     <div className='buycard'>
                         <div className='cardname bold'>Ace XX mas Edition 16mg</div>
-                        <div className='cardprice'>$4.99</div>
+                        <span className='cardprice'>$4.99</span>
                         <div className='inputpart'>
                             <label>Quantity</label><br></br>
                             <input type='number' name='counter' min={1}></input>

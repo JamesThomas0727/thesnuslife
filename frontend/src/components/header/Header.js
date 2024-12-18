@@ -1,6 +1,11 @@
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
 import CartBar from '../cartbar/CartBar';
+import SearchBar from '../searchbar/SearchBar';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeCurrency } from '../../store/currencySlice';
 
 function openNav() {
     // console.log(document.getElementById('myNav').style);
@@ -37,7 +42,8 @@ function Head3() {
         </div>
     );
 }
-function Contactbar(props) {
+
+function ContactBar(props) {
     const navigate = useNavigate();
     let temp = 'contact gap-4 px-2';
     if (props.val) {
@@ -46,10 +52,12 @@ function Contactbar(props) {
 
     return (
         <div className={temp}>
-            <div className=" nav-fs font-semibold" onClick={() => navigate('/home')}>
+            <div className=" nav-fs font-semibold"
+                onClick={() => navigate('/home')}>
                 Home
             </div>
-            <div className="nav-fs font-semibold" onClick={() => navigate('/shop')}>
+            <div className="nav-fs font-semibold"
+                onClick={() => navigate('/shop')}>
                 Shop
             </div>
             <div
@@ -76,8 +84,8 @@ function Contactbar(props) {
             >
                 About Us
             </div>
-            <div className="nav-fs font-semibold" onClick={() => navigate('/faqs')}>
-
+            <div className="nav-fs font-semibold"
+                onClick={() => navigate('/faqs')}>
                 FAQs
             </div>
         </div>
@@ -88,8 +96,37 @@ function Selection(props) {
     if (props.val) {
         temp = props.val;
     }
+    //===============================================================
+    const dispatch = useDispatch();
+    const currency = useSelector((state) =>
+        (state.currency.currency));
+    const [currencies, setCurrencies] = useState("");
+    useEffect(() => {
+        axios.get('http://localhost:5000/currencies')
+            .then((response) => {
+                setCurrencies(response.data);
+            })
+            .catch((error) =>
+                console.error("Fetching Currency data: " + error))
+    }, []);
+
+    //================================================================
+
+    const handleChange = (event) => {
+        const currency_type = event.target.value;
+        const currency = currencies.filter((currency) => {
+            return (currency.currency_name
+                === currency_type);
+        });
+        if (currency.length > 0) {
+            dispatch(changeCurrency(currency[0]));
+        }
+    }
+
     return (
-        <select className={temp}>
+        <select className={temp}
+            value={currency.currency_type}
+            onChange={handleChange}>
             <option className="bg-white " disabled>
                 Currency
             </option>
@@ -116,7 +153,7 @@ export function Navbar() {
     const navigate = useNavigate();
     return (
         <>
-            <div className=" bg-prime">
+            <div className="bg-prime">
                 <div className="con px-12 h-24">
                     <div className="nav">
                         <div
@@ -124,19 +161,19 @@ export function Navbar() {
                             onClick={() => navigate('/home')}
                         >
                             <img
-                                src='/images/products/14.png'
+                                src="/images/products/14.png"
                                 alt="logo-theSunuslife"
                                 className="markImg "
                             />
                         </div>
-                        <Contactbar />
+                        <ContactBar />
 
                         <div className="toolbox">
                             <Selection />
 
                             <div
-                                className="flex justify-center items-center cursor-pointer px-1 lens"
-                                onClick={() => alert('Sorry, we are not out of service!')}
+                                className="cursor-pointer px-1 lens"
+                                onClick={opensearch}
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +267,7 @@ export function Navbar() {
                                     <div className="bartitle">Menu</div>
                                     <div className="overlay">
                                         <div className="overlay-content">
-                                            <Contactbar val=" blocks" />
+                                            <ContactBar val=" blocks" />
                                         </div>
                                     </div>
                                 </div>
@@ -242,11 +279,24 @@ export function Navbar() {
         </>
     )
 }
+function opensearch() {
+    document.getElementById('searchBar').style.height = "70%";
+    document.getElementById('foggy').style.height = "100%";
 
+}
 export default function Header() {
-
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5000/products')
+            .then((response) => {
+                setProducts(response.data);
+            })
+            .catch((error) =>
+                console.error("Fetching Products data: " + error))
+    }, []);
     return (
         <header>
+
             <div>
                 <div className="heads avenir py-2 w-full bg-white gap-4 justify-center items-center px-12 inline">
                     <Head1 />
@@ -260,6 +310,7 @@ export default function Header() {
             <div>
                 <div>
                     <CartBar />
+                    <SearchBar products={products} />
                 </div>
 
             </div>

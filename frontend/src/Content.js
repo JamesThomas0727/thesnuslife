@@ -9,6 +9,7 @@ import FAQsPage from './pages/faqs/faqs';
 import CartPage from './pages/buynow/buynow';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
+import BuyPage from './pages/buynow/buynow';
 export default function Content() {
   return (
     <div>
@@ -58,6 +59,10 @@ export default function Content() {
           <Route
             path='/cart'
             element={<CartPage />}
+          />
+          <Route
+            path='/buynow'
+            element={<BuyPage />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,36 @@
+.thickbold{
+    font-size: 20.27px;
+    font-weight: 900;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    /* background-color: rgba(245, 222, 179, 0); */
+    /* color: black; */
+}
+@media only screen and (max-width: 510px) {
+   
+    .thickbold{
+        font-size: 20.27px;
+        font-weight: 900;
+    }
+    .intro{
+        font-size: 16px;
+    }
+  
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    
+    .thickbold{
+        font-size: 26.27px;
+        font-weight: 900;
+    }
+    .intro{
+        font-size: 16px;
+    }
+    
+      
+  }
+  

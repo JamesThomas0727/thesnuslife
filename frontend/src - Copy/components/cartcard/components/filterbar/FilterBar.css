@@ -1,0 +1,19 @@
+.body {
+    text-align: left;
+    font-size: large;
+    font-family: 'consolas';
+    margin: 1px;
+    padding: 1px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.body:hover {
+    background-color: rgb(240, 237, 237);
+}
+
+.header {
+    font-size: larger;
+    font-style: bold;
+}

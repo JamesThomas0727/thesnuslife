@@ -11,10 +11,15 @@ import NoPage from '../nopage/nopage';
 
 import "./shop.css";
 function ShopPage() {
-    const [showList, setShowList] = useState([])
     //=============================================================
-    const state = useSelector((state) => state);
+    // const state = useSelector((state) => state);
     const dispatch = useDispatch();
+    const filterState = useSelector(
+        (state) => state.filterReducer);
+    const sortMethod = useSelector((state) => {
+        return state.sort.sort;
+    });
+    const state = useSelector((state) => (state));
     //=============================================================
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -23,14 +28,17 @@ function ShopPage() {
         }, 3000);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [state]);
     //=============================================================
     const [products, setProducts] = useState([]);
+    const [showList, setShowList] = useState([])
+
     useEffect(() => {
         axios.get('http://localhost:5000/products')
             .then(response => {
-                const products = response.data;
-                setShowList(products)
+                const show_list = response.data;
+                setProducts(products);
+                setShowList(show_list);
                 let title = "No Products";
                 if (products.length === 0)
                     return (
@@ -40,11 +48,9 @@ function ShopPage() {
             })
             .catch(error =>
                 console.error('Error fetching product data:', error));
-    }, [useState()]);
+    }, [state]);
     //=============================================================
-    const sortMethod = useSelector((state) => {
-        return state.sort.sort;
-    });
+
     useEffect(() => {
         let field = sortMethod.field;
         let des = sortMethod.des;
@@ -60,13 +66,11 @@ function ShopPage() {
             }
         });
         setIsLoading(false);
-    })
+    }, [state])
     //==============================================================
     const filter = useSelector((state) => {
         return state.filter.filter;
     });
-    const filterState = useSelector(
-        (state) => state.filterReducer);
 
     useEffect(() => {
         let brand = filter.categories[0];

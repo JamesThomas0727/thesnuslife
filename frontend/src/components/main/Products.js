@@ -1,16 +1,19 @@
 import './Mainwin.css'
+import { useNavigate } from 'react-router-dom'
+export default function Middlewin() {
 
-export default function Middlewin(){
-    return(
+    const navigate = useNavigate();
+    return (
         <div className="Middlewin">
             <div className='products'>Featured Products</div>
             <div carcel>
-                
+
             </div>
             <div className='bbb'>
-                <div className="shownowntn" >Shop All </div>
+                <div className="shownowntn"
+                    onClick={() => navigate('/shop')}>Shop All </div>
             </div>
-            
+
         </div>
     )
 }

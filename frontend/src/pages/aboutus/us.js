@@ -4,7 +4,7 @@ export default function Us() {
     return (
         <div className='contain'>
             <p id="about">ABOUT US</p>
-            <div className='maincontent'>
+            <div className='maincontent w-[300px] sm:w-50 md:w-75 lg:w-[900px]'>
                 <div className="paragraph">
                     <p className='para'>Here at The Snus Life, most importantly, we are snus lovers. We know snus and nicopods are and can be a positive force on the world and help people to laugh and love life.</p>
                     <p className='para'>We are the largest online retailer in the UK because we are passionate about what we do. We take pride in delivering the highest possible quality of service for those who love to live The Snus Life</p>

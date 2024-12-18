@@ -1,44 +1,34 @@
 
+import { addProduct, removeProduct, updateQuantity } from '../../store/cartSlice';
 import './CartCard.css'
-// import {closeNav} from '../header/Header'
 
-export default function CartCard() {
-    let poundprice = 4.99;
-    let thingname = "Snowman Fresh Mint - 12mg";
+export default function CartCard(props) {
+    const product = props.product;
     let i = 1;
 
     function Addcount(n) {
-        if (n === 2) {
-            i++;
-        }
-        else {
-            if (i < 0) {
-                alert('You cannot below it anymore.');
-            }
-            else i--;
-        }
-
-
     }
     return (
         <>
             <div id="cartcad">
                 <div className='paycartbox'>
-                    <img src="/images/products/10.png" alt='Cartcardimg' className='imgboxs'></img>
+                    <img src={"/images/products/" + product.id + ".png"}
+                        alt='CartCardimg' className='imgboxs'></img>
                     <div className="textsbox" id="nopadding">
                         <div className="collas colls">
-                            <div className="thingname " id='morefit'>{thingname}</div>
-                            <div className="poundprice">{poundprice}</div>
+                            <div className="thingname " id='morefit'>{product.name}</div>
+                            <div className="poundprice">{product.price}</div>
                         </div>
-                        <div className="recyclebtn closex" >
+                        <div className="recyclebtn closex"
+                            onClick="">
                             x
                         </div>
                     </div>
                 </div>
                 <div className="addbox" id='center'>
-                    <div className="minus" onClick={Addcount(2)}>-</div>
-                    <div id="val" >{i}</div>
-                    <div className="add" onClick={Addcount(1)}>+</div>
+                    <div className="minus" onClick="">-</div>
+                    <div id="val" >{product.quantity}</div>
+                    <div className="add" onClick="">+</div>
                 </div>
 
             </div>

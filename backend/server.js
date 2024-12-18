@@ -54,7 +54,7 @@ app.get('/products', async (req, res) => {
 app.get('/currencies', async (req, res) => {
     try {
         const currency_rates = await CurrencyRateModel.find();
-        res.json(currency_rates);
+        res.json({currency: currency_rates});
     } catch (err) {
         res.status(500).send(err.message);
     }

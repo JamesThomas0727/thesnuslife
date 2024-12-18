@@ -2,7 +2,7 @@ import './Button.css'
 
 export default function Textbtn(props){
     return(
-        <div className='textbtn'>
+        <div className='text-btn'>
             {props.text}
         </div>
     )

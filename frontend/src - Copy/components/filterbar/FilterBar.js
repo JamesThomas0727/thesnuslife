@@ -1,12 +1,9 @@
 import React from "react";
-import axios from 'axios';
-
-import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Accordion from 'react-bootstrap/Accordion';
 import RangeSlider from "../rangeslider/rangeslider";
-import { categoryFilter, priceFilter, clearFilter } from '../../store/filterSlice';
+import { categoryFilter, clearFilter } from '../../store/filterSlice';
 import "./FilterBar.css";
 
 const brands = ['ALL', 'Bundle Deals', 'Accessories', 'Apparel', '77', 'Ace'];
@@ -23,20 +20,12 @@ export default function FilterBar() {
     const dispatch = useDispatch();
 
     const categoryClick = (event) => {
-        // let filter = {};
-        // dispatch(setFilter(filter));
+        let filter = {};
+        dispatch(categoryFilter(filter));
     }
 
-    const priceChange = (event) => {
-        const max = 0, min = 0;
-        const filter = [max, min];
-        dispatch(priceFilter(filter))
-    }
-    //==================================================================
-    const handleChange = (event) => {
-        alert("tterwt");
-        console.log("adfaf")
-    }
+
+    //=================================================================
     //==================================================================
     return (
         <div>
@@ -67,11 +56,7 @@ export default function FilterBar() {
                         Price
                     </Accordion.Header>
                     <Accordion.Body className="body">
-                        <RangeSlider sx={{ width: 30 }}
-                            onChange={handleChange}
-                            onClick={handleChange}
-                        >
-                        </RangeSlider>
+                        <RangeSlider sx={{ width: 30 }} />
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">

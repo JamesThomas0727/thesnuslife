@@ -35,3 +35,6 @@ export const { addProduct, removeProduct, updateQuantity } = cartSlice.actions;
 
 // Export reducer
 export default cartSlice.reducer;
+
+
+

@@ -32,3 +32,6 @@ export const { categoryFilter, priceFilter, clearFilter } = filterSlice.actions;
 
 // Export reducer
 export default filterSlice.reducer;
+
+
+
